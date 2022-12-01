@@ -1,4 +1,3 @@
-//Import necessary modules
 //dotenv to get access to local .env file
 require('dotenv').config();
 
@@ -10,7 +9,7 @@ const app = express();
 const cors = require('cors');
 
 //Import routes
-
+const userRoutes = require('./routes/users')
 //Import PORT
 const PORT  = process.env.PORT || 8080
 
@@ -19,6 +18,7 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
+app.use('/api/users', userRoutes)
 
 //Set up port to listen on
 app.listen(PORT, () => {

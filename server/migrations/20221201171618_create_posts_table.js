@@ -1,13 +1,12 @@
 exports.up = function(knex) {
     return knex.schema.createTable('posts', (table) => {
-        table.integer('id').primary();
+        table.increments('id').primary();
         table.integer('user_id')
             .unsigned()
             .notNullable()
             .references('id')
             .inTable('users')
-            .onUpdate('CASCADE')
-            .onDelete('CASCADE');
+            .onUpdate('CASCADE');
         table.string('category').notNullable();
         table.string('title').notNullable();
         table.string('content').notNullable();
