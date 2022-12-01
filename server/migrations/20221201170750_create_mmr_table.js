@@ -1,11 +1,10 @@
 exports.up = function(knex) {
-  return knex.schema.createTable('mmr', (table) => {
-        table.increments('id').primary();
-        table.integer('user_id')
-            .unsigned()
+    return knex.schema.createTable('mmr', (table) => {
+        table.uuid('id').primary();
+        table
+            .uuid('user_id')
             .notNullable()
-            .references('id')
-            .inTable('users')
+            .references('users.id')
             .onUpdate('CASCADE')
             .onDelete('CASCADE');
         table.integer('mmr_standard').notNullable().unsigned();

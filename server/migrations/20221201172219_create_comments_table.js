@@ -1,17 +1,15 @@
 exports.up = function(knex) {
     return knex.schema.createTable('comments', (table) => {
-        table.increments('id').primary();
-        table.integer('user_id')
-            .unsigned()
+        table.uuid('id').primary();
+        table
+            .uuid('user_id')
             .notNullable()
-            .references('id')
-            .inTable('users')
+            .references('users.id')
             .onUpdate('CASCADE');
-        table.integer('post_id')
-            .unsigned()
+        table
+            .uuid('post_id')
             .notNullable()
-            .references('id')
-            .inTable('posts')
+            .references('posts.id')
             .onUpdate('CASCADE')
             .onDelete('CASCADE');
         table.string('content').notNullable();
