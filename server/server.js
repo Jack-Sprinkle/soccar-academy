@@ -9,8 +9,9 @@ const app = express();
 const cors = require('cors');
 
 //Import routes
-const userRoutes = require('./routes/users')
-const coachRoutes = require('./routes/coach')
+const userRoutes = require('./routes/users');
+const coachRoutes = require('./routes/coach');
+const mmrRoutes = require('./routes/mmr');
 
 //Import PORT
 const PORT  = process.env.PORT || 8080
@@ -20,8 +21,9 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-app.use('/api/users', userRoutes)
-app.use('/coaches', coachRoutes)
+app.use('/api/users', userRoutes);
+app.use('/coaches', coachRoutes);
+app.use('/mmr', mmrRoutes);
 
 //Set up port to listen on
 app.listen(PORT, () => {
