@@ -18,7 +18,6 @@ module.exports = (req, resp, next) => {
 
         //Adding the decoded token to the request object for use in future routes
         req.user = decoded
-        console.log(decoded)
 
         //move on to endpoint the client wants to call
         next();

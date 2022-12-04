@@ -5,11 +5,12 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node --watch server.js",
     "migrate": "knex migrate:latest",
     "migrate:up": "knex migrate:up",
     "migrate:down": "knex migrate:down",
-    "migrate:rollback": "knex migrate:rollback"
+    "migrate:rollback": "knex migrate:rollback",
+    "seed": "knex seed:run"
   },
   "author": "Jack Sprinkle",
   "license": "ISC",

@@ -2,7 +2,6 @@ const knex = require('knex')(require('../knexfile'))
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const authorize = require('../middleware/authorize');
 const {uuid} = require('uuidv4');
 
 
