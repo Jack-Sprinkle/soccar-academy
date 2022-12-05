@@ -54,7 +54,6 @@ exports.register = async(req, resp) => {
         await knex('users').insert(newUser);
         resp.status(201).send("Registered successfully")
     } catch (error) {
-        console.log(error)
         resp.status(400).send("Failed to register")
     }
 }
