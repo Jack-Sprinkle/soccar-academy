@@ -1,9 +1,10 @@
-import './HomePage.scss'
+import './HomePage.scss';
+import SignUp from '../../components/SignUp/SignUp';
 
 function HomePage() {
     return (
         <div>
-           <p>Home Page info here</p>
+           <SignUp />
         </div>
     );
 };
