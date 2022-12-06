@@ -4,8 +4,15 @@ require('dotenv').config();
 exports.getPosts = async(req, resp) => {
     try {
         const postsData = await knex('posts')
-            .select('id', 'title', 'content', 'user_id', 'created_on')
+            .join('users', 'posts.user_id', '=', 'users.id' )
             .where({category: req.params.category})
+            .select(
+                'posts.id', 
+                'posts.title', 
+                'posts.content', 
+                'posts.created_on',
+                'users.user_name'   
+            )
 
         resp.status(200).json(postsData)
     } catch(error) {
