@@ -2,47 +2,47 @@ import './SignUp.scss';
 
 function SignUp() {
     return (
-        <form>
-            <label>
+        <form className='signup'>
+            <label className='signup__label'>
               Username
-              <input type='text' name='user_name'></input>
+              <input className='signup__input' type='text' name='user_name'></input>
             </label>
-            <label>
+            <label className='signup__label'>
               Email
-              <input type='text' name='user_email'></input>
+              <input className='signup__input' type='text' name='user_email'></input>
             </label>
-            <label>
+            <label className='signup__label'>
               Epic Id
-              <input type='text' name='epic_id'></input>
+              <input className='signup__input' type='text' name='epic_id'></input>
             </label>
-            <label>
+            <label className='signup__label'>
               Discord
-              <input type='text' name='discord_name'></input>
+              <input className='signup__input' type='text' name='discord_name'></input>
             </label>
-            <label>
+            <label className='signup__label'>
               Standard MMR
-              <input type='text' name='mmr_standard'></input>
+              <input className='signup__input' type='text' name='mmr_standard'></input>
             </label>
-            <label>
+            <label className='signup__label'>
               Bio
-              <textarea type='text' name='user_name'></textarea>
+              <textarea className='signup__input' type='text' name='user_name'></textarea>
             </label>
-            <label>
+            <label className='signup__label'>
               Password
-              <input type='password' name='user_password'></input>
+              <input className='signup__input' type='password' name='user_password'></input>
             </label>
-            <label>
+            <label className='signup__label'>
               Confirm Password
-              <input type='password' name='user_password-confirm'></input>
+              <input className='signup__input' type='password' name='user_password-confirm'></input>
             </label>
             <p>Do you wish to coach?</p>
-            <label>
+            <label className='signup__label'>
               Yes
-              <input type='radio' name='user_coach' value='yes'></input>
+              <input className='signup__input--radio' type='radio' name='user_coach' value='yes'></input>
             </label>
-            <label>
+            <label className='signup__label'>
                 No
-                <input type='radio' name='user_coach' value='no'></input>
+                <input className='signup__input--radio' type='radio' name='user_coach' value='no'></input>
             </label>
 
         </form>
