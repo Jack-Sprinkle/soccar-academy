@@ -8,7 +8,7 @@ exports.up = function(knex) {
             .onUpdate('CASCADE')
             .onDelete('CASCADE');
         table.integer('mmr_standard').notNullable().unsigned();
-        table.timestamp('updated_at').defaultTo(knex.fn.now());
+        table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
     })
 };
 
