@@ -1,0 +1,40 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
+.header {
+    background-color: colors.$navy-blue;
+
+    &__banner {
+        width: 100%;
+        object-fit: cover;
+
+        @include responsive.tablet {
+            height: 40vw;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem .5rem 1rem;
+
+        @include responsive.tablet {
+            padding: 0 1.5rem .5rem 1.5rem;
+        }
+
+        @include responsive.desktop {
+            padding: 0 5rem .5rem 5rem;
+        }
+        
+
+        &-link {
+            text-decoration: none;
+            color: colors.$cream;
+            font-size: .75rem;
+            line-height: 1.25rem;
+            font-weight: 500;
+        }
+    }
+}
+

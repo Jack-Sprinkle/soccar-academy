@@ -3,7 +3,7 @@ import './HomePage.scss'
 function HomePage() {
     return (
         <div>
-            Home Page info here
+           <p>Home Page info here</p>
         </div>
     );
 };
