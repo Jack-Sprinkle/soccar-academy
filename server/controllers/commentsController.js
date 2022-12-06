@@ -17,3 +17,25 @@ exports.getComments = async(req, resp) => {
         resp.status(400).send(`Error retreiving Comments for ${req.params.postId} ${error}`)
     }
 }
+
+exports.newComment = async(req, resp) => {
+    try {
+        if(
+            !req.body.user_id ||
+            !req.body.content
+        ) {
+            return resp.status(400).send(`Please fill out all required fields`)
+        }
+
+        const newComment = req.body
+        newComment.id = uuid()
+        newComment.post_id = req.params.postId
+        
+        await knex('comments')
+            .insert(newComment)
+        resp.status(201).send(`New comment successfully created`)
+
+    } catch(error) {
+        resp.status(400).send(`Error creating new comment ${error}`)
+    }
+}
