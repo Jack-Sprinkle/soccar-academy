@@ -2,13 +2,14 @@ import './PostsPage.scss';
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
-
 import Post from '../../components/Post/Post';
 
 
 function PostsPage() {
+    //Initialize thread list as state
     const [threads, setThreads] = useState(null)
 
+    //Make axios call on mount of components
     const category = useParams();
     useEffect(() => {
         axios.get(`http://localhost:8080/posts/${category.category}`)
@@ -17,14 +18,28 @@ function PostsPage() {
         })
         .catch(error => {
             console.log(error)
-        }, [])
-    })
+        })
+    }, []);
 
+    //If there are no threads, early return
     if(!threads) {
         return (
             <div>Loading posts...</div>
         )
     }
+
+    //create function to update timestamp to more user friendly format
+    const updatedTime = (array) => {
+            threads.map((thread) => {
+            const dateObj = new Date(thread.created_on)
+            const timestamp = dateObj.getTime()
+            const modifiedDate = new Date(timestamp)
+            thread.created_on = modifiedDate.toLocaleDateString()
+        })
+    }
+
+    //call function
+    updatedTime(threads)
 
     return (
         <div>

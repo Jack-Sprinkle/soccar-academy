@@ -14,6 +14,7 @@ exports.getPosts = async(req, resp) => {
                 'posts.created_on',
                 'users.user_name'   
             )
+            .orderBy('posts.created_on', 'desc')
 
         resp.status(200).json(postsData)
     } catch(error) {

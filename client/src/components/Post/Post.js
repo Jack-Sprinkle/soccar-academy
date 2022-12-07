@@ -1,15 +1,14 @@
 import './Post.scss';
 
 function Post({id, title, content, timestamp, user}) {
-    const date = new Date(timestamp)
     return (
         <div className='post'>
             <h2 className='post__title'>{title}</h2>
             <div className='post__info'>
-                <p>{user}</p>
-                <p>{timestamp}</p>
+                <p className='post__info-text'>{user}</p>
+                <p className='post__info-text'>{timestamp}</p>
             </div>
-            <p>{content}</p>
+            <p className='post__info-text'>{content}</p>
         </div>
     );
 };
