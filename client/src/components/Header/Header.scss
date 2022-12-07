@@ -25,6 +25,7 @@
 
     &__nav {
         background-color: colors.$dark-blue;
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;

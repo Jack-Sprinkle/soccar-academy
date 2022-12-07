@@ -1,0 +1,64 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
+.menu {
+    position: absolute;
+    top: .9rem;
+    left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: colors.$off-white;
+    padding: .5rem;
+    border-radius: .25rem;
+    width: 10rem;
+
+    &__heading-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__heading {
+        font-size: .875rem;
+        line-height: 1.25rem;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    &__close {
+        border: none;
+        background-color: colors.$off-white;
+        background-image: url('../../assets/icons/close.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: .75rem;
+        height: .75rem; 
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        padding: 1rem 0 .5rem 0;
+        gap: .75rem;
+
+        &-item {
+            font-size: .75rem;
+            line-height: 1.125rem;
+            font-weight: 400;
+
+            &:hover {
+                border-bottom: 2px solid colors.$light-blue;
+                margin-bottom: -2px;
+            }
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: colors.$black;
+}
