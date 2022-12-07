@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage/HomePage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import SupportPage from './pages/SupportPage/SupportPage';
 import PostsPage from './pages/PostsPage/PostsPage';
+import ThreadPage from './pages/ThreadPage/ThreadPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/about' element={<AboutPage />}></Route>
           <Route path='/support' element={<SupportPage />}></Route>
           <Route path='/:category' element={<PostsPage />}></Route>
+          <Route path='/:category/:postId/comments' element={<ThreadPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

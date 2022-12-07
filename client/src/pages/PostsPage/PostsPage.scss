@@ -1,6 +1,28 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
 .post__category {
     margin: 1rem;
     font-size: 1.125rem;
     line-height: 1.5rem;
     font-weight: 500;
+}
+
+.post__new-button {
+    margin-left: 1rem;
+    border-radius: .25rem;
+    color: colors.$white;
+    background-color: colors.$orange;
+    border: 1px solid colors.$orange;
+    width: 4.5rem;
+    height: 2rem;
+    font-size: .75rem;
+    line-height: 1rem;
+    font-weight: 700;
+
+    &:hover {
+        background-color: colors.$orange-hover;
+        border: 1px solid colors.$orange-hover;
+    }
 }

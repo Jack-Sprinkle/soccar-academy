@@ -1,6 +1,6 @@
 import './PostsPage.scss';
 import {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 import axios from 'axios';
 import Post from '../../components/Post/Post';
 
@@ -45,6 +45,7 @@ function PostsPage() {
     return (
         <div>
             <h2 className='post__category'>{category.category} Discussion</h2>
+            <button className='post__new-button'>New Post</button>
             {threads.map((thread) => {
                 const {id, title, content, created_on, user_name} = thread;
                 return (
