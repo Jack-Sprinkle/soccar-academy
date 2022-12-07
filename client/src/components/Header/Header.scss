@@ -32,6 +32,12 @@
     }
 
     &__menu {
+        border: none;
+        background-color: colors.$dark-blue;
+        background-image: url('../../assets/icons/menu.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         width: 2rem;
         height: 2rem;
     }
