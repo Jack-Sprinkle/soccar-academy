@@ -1,10 +1,10 @@
 import './HomePage.scss';
-import SignUp from '../../components/SignUp/SignUp';
+import ForumList from '../../components/ForumList/FourmList';
 
 function HomePage() {
     return (
-        <div>
-           Home page stuff
+        <div className='homepage'>
+           <ForumList />
         </div>
     );
 };

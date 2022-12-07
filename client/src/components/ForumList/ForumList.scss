@@ -1,0 +1,32 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
+
+.forum {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+
+    &__card {
+        display: flex;
+        align-items: center;
+        border-radius: .25rem;
+        padding: .5rem 1rem;
+        gap: 2rem;
+        background-color: colors.$dark-blue;
+    }
+
+    &__heading {
+        font-size: .875rem;
+        line-height: 1.25rem;
+        font-weight: 500;
+        color: colors.$white;
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+    }
+}

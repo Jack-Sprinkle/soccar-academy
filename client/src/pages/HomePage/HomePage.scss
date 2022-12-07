@@ -1,3 +1,7 @@
-p {
-    font-weight: 400;
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
+.homepage {
+    background-color: colors.$off-white;
 }
