@@ -35,6 +35,7 @@ function PostsPage() {
             const timestamp = dateObj.getTime()
             const modifiedDate = new Date(timestamp)
             thread.created_on = modifiedDate.toLocaleDateString()
+            return thread
         })
     }
 
@@ -43,12 +44,14 @@ function PostsPage() {
 
     return (
         <div>
+            <h2 className='post__category'>{category.category} Discussion</h2>
             {threads.map((thread) => {
                 const {id, title, content, created_on, user_name} = thread;
                 return (
                     <Post
                         key={id}
                         id={id}
+                        category={category}
                         title={title}
                         content={content}
                         timestamp={created_on}

@@ -7,15 +7,15 @@ function ForumList() {
         <main className='forum'>
             <div className='forum__card'>
                 <img className='forum__icon' src={chatIcon} alt="two chat bubbles side by side" />
-                <Link to='/general'><h2 className='forum__heading'>General Discussion</h2></Link>
+                <Link to='/General'><h2 className='forum__heading'>General Discussion</h2></Link>
             </div>
             <div className='forum__card'>
                 <img className='forum__icon' src={chatIcon} alt="two chat bubbles side by side" />
-                <Link to='/skills'><h2 className='forum__heading'>Skills Discussion</h2></Link>
+                <Link to='/Skills'><h2 className='forum__heading'>Skills Discussion</h2></Link>
             </div>
             <div className='forum__card'>
                 <img className='forum__icon' src={chatIcon} alt="two chat bubbles side by side" />
-                <Link to='/esports'><h2 className='forum__heading'>ESports Discussion</h2></Link>
+                <Link to='/Esports'><h2 className='forum__heading'>ESports Discussion</h2></Link>
             </div>
         </main>
     );
