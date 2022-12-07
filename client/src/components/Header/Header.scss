@@ -2,39 +2,44 @@
 @use '../../styles/colors';
 @use '../../styles/responsive';
 
+
 .header {
-    background-color: colors.$navy-blue;
+    position: relative;
+    width: 100%;
+    background-image: url('../../assets/images/header-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    &__banner {
-        width: 100%;
-        object-fit: cover;
+    &__overlay {
+        background-color: black;
+        opacity: 55%;
+        height: 12rem;
+    }
 
-        @include responsive.tablet {
-            height: 20rem;
-        }
+    &__logo {
+        position: absolute;
+        top: 1rem;
+        left: 2.5rem;
     }
 
     &__nav {
+        background-color: colors.$dark-blue;
         display: flex;
         justify-content: space-between;
-        padding: 0 1rem .5rem 1rem;
+        align-items: center;
+        padding: .5rem 1rem;
+    }
 
-        @include responsive.tablet {
-            padding: 0 1.5rem .5rem 1.5rem;
-        }
+    &__menu {
+        width: 2rem;
+        height: 2rem;
+    }
 
-        @include responsive.desktop {
-            padding: 0 5rem .5rem 5rem;
-        }
-        
-
-        &-link {
-            text-decoration: none;
-            color: colors.$cream;
-            font-size: .75rem;
-            line-height: 1.25rem;
-            font-weight: 500;
-        }
+    &__link {
+        color: colors.$white;
+        font-size: .875rem;
+        line-height: 1.125rem;
+        margin: 0;
     }
 }
-

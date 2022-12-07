@@ -1,16 +1,20 @@
 import './Header.scss';
-import {Link} from 'react-router-dom';
-import banner from '../../assets/images/header-image.jpg'
+import logo from '../../assets/images/Group.svg';
+import menu from '../../assets/icons/menu.svg';
+
 function Header() {
     return (
-        <header className='header'>
-            <img className='header__banner' src={banner} alt='two players going for the ball while playing rocket league' />
-            <div className='header__nav'>
-                <Link to='/' className='header__nav-link'>Home</Link>
-                <Link to='/about' className='header__nav-link'>About</Link>
-                <Link to='/support' className='header__nav-link'>Support</Link>
-            </div>
-        </header>
+        <>
+            <header className='header'>
+                <div className='header__overlay'>
+                </div>
+                <img className='header__logo' src={logo}/>
+            </header>
+            <nav className='header__nav'>
+                <img className='header__menu' src={menu} />
+                <p className='header__link'>Log in</p>
+            </nav>
+        </>
     );
 };
 
