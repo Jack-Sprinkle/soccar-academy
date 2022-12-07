@@ -4,7 +4,7 @@ const authorize = require('../middleware/authorize');
 
 router
     .route('/:postId')
-    .get(authorize, commentsController.getComments)
+    .get(commentsController.getComments)
     .post(authorize, commentsController.newComment)
 
 module.exports = router;

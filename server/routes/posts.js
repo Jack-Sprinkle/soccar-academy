@@ -4,7 +4,7 @@ const authorize = require('../middleware/authorize');
 
 router
     .route('/:category')
-    .get(authorize, postsController.getPosts)
+    .get(postsController.getPosts)
     .post(authorize, postsController.newPost)
 
 module.exports = router;
