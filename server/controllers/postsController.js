@@ -22,6 +22,22 @@ exports.getPosts = async(req, resp) => {
     }
 }
 
+exports.getSinglePost = async(req, resp) => {
+    try {
+        const singlePost = await knex('posts')
+            .join('users', 'posts.user_id', '=', 'users.id')
+            .where({'posts.id': req.params.postId})
+            .select(
+                'posts.title', 
+                'posts.content',
+                'users.user_name'
+            )
+        resp.status(201).json(singlePost)
+    } catch(error) {
+        resp.status(400).send(`Error retreiving post ${error}`)
+    }
+}
+
 exports.newPost = async(req, resp) => {
     try {
         if(
