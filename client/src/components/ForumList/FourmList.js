@@ -17,6 +17,10 @@ function ForumList() {
                 <img className='forum__icon' src={chatIcon} alt="two chat bubbles side by side" />
                 <Link to='/Esports'><h2 className='forum__heading'>ESports Discussion</h2></Link>
             </div>
+            <div className='forum__card'>
+                <img className='forum__icon' src={chatIcon} alt="two chat bubbles side by side" />
+                <Link to='/Platinum'><h2 className='forum__heading'>Platinum Discussion</h2></Link>
+            </div>
         </main>
     );
 };
