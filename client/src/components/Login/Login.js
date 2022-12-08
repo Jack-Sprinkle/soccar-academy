@@ -26,7 +26,7 @@ function Login({setLoginShow, loginShow, onClose}) {
         axios.post('http://localhost:8080/users/login', user)
         .then(response => {
             sessionStorage.setItem('token', response.data.token);
-            navigate('/dashboard')
+            navigate(-1)
             setLoginShow(false)
         }).catch(error => {
             console.log(error)

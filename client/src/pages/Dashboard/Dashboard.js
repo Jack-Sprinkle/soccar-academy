@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import UserProfile from '../../components/UserProfile/UserProfile';
 import MMRTracker from '../../components/MMRTracker/MMRTracker';
+import SkillTracker from '../../components/SkillTracker/SkillTracker';
 
 function Dashboard() {
     const [user, setUser] = useState(null);
@@ -60,6 +61,7 @@ function Dashboard() {
                 mmr={mmr_standard}
                 initialMMRDate={created_on}
             />
+            <SkillTracker />
         </div>
     );
 };
