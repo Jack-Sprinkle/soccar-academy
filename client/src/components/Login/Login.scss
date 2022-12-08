@@ -49,6 +49,9 @@
         font-size: .75rem;
         line-height: 1.125rem;
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     &__input {

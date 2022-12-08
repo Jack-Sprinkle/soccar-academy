@@ -54,19 +54,21 @@ function Login({setLoginShow, loginShow, onClose}) {
                     <Form className='login__form'>
                         <div className='login__form-fields'>
                             <label className='login__label'>
-                            Email
-                            <Field className={`login__input ${errors.email && touched.email ? 'login__input--invalid' : ''}`} name='email'/>
-                            {errors.email && touched.email ? (
-                                <div className='login__errors'>{errors.email}</div>
-                            ) : null}
+                                Email
+                                <Field className={`login__input ${errors.email && touched.email ? 'login__input--invalid' : ''}`} name='email'/>
                             </label>
+                            {errors.email && touched.email ? (
+                            <div className='login__errors'>{errors.email}</div>
+                            ) : null}
+                            
                             <label className='login__label'>
-                            Password
-                            <Field className={`login__input ${errors.password && touched.password ? 'login__input--invalid' : ''}`} name='password' type='password' />
+                                Password
+                                <Field className={`login__input ${errors.password && touched.password ? 'login__input--invalid' : ''}`} name='password' type='password' />
+                            </label>
                             {errors.password && touched.password ? (
                                 <div className='login__errors'>{errors.password}</div>
                             ) : null}
-                            </label>
+                            
                         </div>
                         <button className='login__submit' type='submit'>Login</button>
                     </Form>
