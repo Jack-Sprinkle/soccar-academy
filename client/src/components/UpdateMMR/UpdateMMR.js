@@ -30,6 +30,7 @@ function MMR({userId, mmrShow, setMMRShow, onClose}) {
         })
         .then(response => {
             console.log(response)
+            onClose()
         }).catch(error => {
             console.log(error)
         })

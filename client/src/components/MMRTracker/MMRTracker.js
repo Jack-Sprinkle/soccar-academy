@@ -19,7 +19,7 @@ function MMRTracker({userId, mmr, initialMMRDate}) {
         })
         .then(response => {
             setMMRData(response.data)
-            setMMRData(mmrData => [initialMMRInfo, ...mmrData])
+            setMMRData(mmrData => [...mmrData, initialMMRInfo])
         }).catch(error => {
             console.log(error)
         })
@@ -45,10 +45,19 @@ function MMRTracker({userId, mmr, initialMMRDate}) {
     updatedMMRTime(mmrData)
 
     return (
-        <div className='tracker'>
-            <div className='tracker__column'>
+        <main className='tracker__container'>
+            <h2 className='tracker__heading'>MMR Standard Tracker</h2>
+            <div className='tracker'>
+                {mmrData.map((record, i) =>{
+                    return (
+                        <div className='tracker__column' key={i}>
+                            <p className='tracker__text'>{record.updated_at}</p>
+                            <p className='tracker__text'>MMR: {record.mmr_standard}</p>
+                        </div>
+                    )
+                })}
             </div>
-        </div>
+        </main>
     );
 };
 
