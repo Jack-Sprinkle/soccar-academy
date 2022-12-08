@@ -1,6 +1,7 @@
 import './Dashboard.scss';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import UserProfile from '../../components/UserProfile/UserProfile';
 
 function Dashboard() {
     const [user, setUser] = useState(null);
@@ -41,9 +42,16 @@ function Dashboard() {
             </div>
         )
     }
+    const {user_name, discord_name, epic_id, mmr_standard, user_bio} = user
     return (
         <div>
-            This is the user dashboard
+            <UserProfile 
+                userName={user_name}
+                discord={discord_name}
+                epic={epic_id}
+                mmr={mmr_standard}
+                bio={user_bio}
+            />
         </div>
     );
 };

@@ -56,7 +56,7 @@ function ThreadPage() {
         <div className='thread'>
             <div className='thread__info'>
                 <h2 className='thread__title'>{post.title}</h2>
-                <button className='thread__reply'>Reply</button>
+                <button className='thread__reply'>Comment</button>
                 <div className='thread__content'>
                     <div className='thread__content-container'>
                         <p>{post.user_name}</p>
@@ -77,7 +77,6 @@ function ThreadPage() {
                     />
                 )
             })}
-            <button className='thread__reply'>Reply</button>
              
         </div>
     );
