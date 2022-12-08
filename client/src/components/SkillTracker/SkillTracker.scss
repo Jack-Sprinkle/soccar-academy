@@ -44,6 +44,11 @@
         line-height: 1rem;
         font-weight: 700;
         align-self: center;
+
+        &:hover {
+            background-color: colors.$orange-hover;
+            border: 1px solid colors.$orange-hover;
+        }
     }
 
     &__container {
@@ -85,6 +90,11 @@
         line-height: 1rem;
         font-weight: 700;
         align-self: center;
+
+        &:hover {
+            background-color: colors.$orange-hover;
+            border: 1px solid colors.$orange-hover;
+        }
     }
 }
 
