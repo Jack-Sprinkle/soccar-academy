@@ -30,7 +30,8 @@ exports.getSinglePost = async(req, resp) => {
             .select(
                 'posts.title', 
                 'posts.content',
-                'users.user_name'
+                'users.user_name',
+                'posts.created_on'
             )
         resp.status(201).json(singlePost)
     } catch(error) {

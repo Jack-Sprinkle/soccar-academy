@@ -42,14 +42,26 @@ function ThreadPage() {
             return comment
         })
     }
-
     updatedTime(comments)
+    
+    const updatedPostTime = (object) => {
+        const dateObj = new Date(post.created_on);
+        const timestamp = dateObj.getTime();
+        const modifiedDate = new Date(timestamp)
+        post.created_on = modifiedDate.toLocaleDateString();
+    }
+    updatedPostTime(post)
+
     return (
         <div className='thread'>
             <div className='thread__info'>
                 <h2 className='thread__title'>{post.title}</h2>
                 <button className='thread__reply'>Reply</button>
                 <div className='thread__content'>
+                    <div className='thread__content-container'>
+                        <p>{post.user_name}</p>
+                        <p>{post.created_on}</p>
+                    </div>
                     <p>{post.content}</p>
                 </div>
             </div>

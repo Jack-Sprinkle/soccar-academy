@@ -41,5 +41,10 @@
         padding: .5rem .5rem;
         background-color:  colors.$dark-blue;
         border-radius: .25rem;
+
+        &-container {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }
