@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import SupportPage from './pages/SupportPage/SupportPage';
 import PostsPage from './pages/PostsPage/PostsPage';
 import ThreadPage from './pages/ThreadPage/ThreadPage';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/support' element={<SupportPage />}></Route>
           <Route path='/:category' element={<PostsPage />}></Route>
           <Route path='/:category/:postId/comments' element={<ThreadPage />}></Route>
+          <Route path='/dashboard' element={<Dashboard />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
