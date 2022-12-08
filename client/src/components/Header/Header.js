@@ -18,7 +18,8 @@ function Header() {
             </header>
             <nav className='header__nav'>
                 <button onClick={() => setShow(true)} className='header__menu'></button>
-                <Menu 
+                <Menu
+                    setLoginShow={setLoginShow} 
                     show={show}
                     onClose={() => setShow(false)}
                 />

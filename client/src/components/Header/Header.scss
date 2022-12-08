@@ -41,6 +41,7 @@
         background-size: cover;
         width: 2rem;
         height: 2rem;
+        cursor: pointer;
     }
 
     &__link {
@@ -48,5 +49,6 @@
         font-size: .875rem;
         line-height: 1.125rem;
         margin: 0;
+        cursor: pointer;
     }
 }

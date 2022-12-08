@@ -1,7 +1,7 @@
 import './Menu.scss';
 import {Link, useNavigate} from 'react-router-dom';
 
-function Menu({show, onClose}) {
+function Menu({setLoginShow, show, onClose}) {
     const navigate = useNavigate()
     const handleLogout = () => {
         sessionStorage.removeItem('token');
@@ -14,6 +14,11 @@ function Menu({show, onClose}) {
             null
         )
     }
+
+    const openLogin = () => {
+        setLoginShow(true)
+        onClose()
+    }
     return (
         <div className='menu'>
             <div className='menu__heading-container'>
@@ -21,8 +26,9 @@ function Menu({show, onClose}) {
                 <button className='menu__close' onClick={onClose}></button>
             </div>
             <ul className='menu__list'>
+                <Link to='/' onClick={onClose}><li className='menu__list-item'>Home</li></Link>
                 <li className='menu__list-item'>Create Account</li>
-                <li className='menu__list-item'>Log in</li>
+                <li onClick={openLogin} className='menu__list-item'>Log in</li>
                 <Link to='/dashboard' onClick={onClose}><li className='menu__list-item'>Dashboard</li></Link>
                 <li className='menu__list-item'>Find Coach</li>
                 <Link to='/' onClick={onClose}><li className='menu__list-item'>Forums</li></Link>
