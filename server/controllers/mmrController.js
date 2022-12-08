@@ -15,7 +15,7 @@ exports.getMMR = async(req, resp) => {
 
 exports.updateMMR = async(req, resp) => {
     try {
-        if(!req.body.mmr_standard) {
+        if(!req.body.mmr_standard && !req.body.user_id) {
             return resp.status(400).send(`Please make sure to provide updated MMR`)
         }
 

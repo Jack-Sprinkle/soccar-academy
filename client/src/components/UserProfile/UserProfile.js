@@ -1,6 +1,10 @@
 import './UserProfile.scss';
+import MMR from '../UpdateMMR/UpdateMMR';
+import { useState } from 'react';
 
-function UserProfile({userName, discord, epic, mmr, bio}) {
+function UserProfile({userId, userName, discord, epic, mmr, bio}) {
+    const [mmrShow, setMMRShow] = useState(null)
+
     return (
         <div className='profile'>
             <h2 className='profile__heading'>Profile</h2>
@@ -13,7 +17,13 @@ function UserProfile({userName, discord, epic, mmr, bio}) {
                 </div>
                 <p className='profile__info-text'>{bio}This is where a bio will go</p>
             </div>
-            <button className='profile__update'>Update MMR</button>
+            <button onClick={() => setMMRShow(true)} className='profile__update'>Update MMR</button>
+            <MMR
+                mmrShow={mmrShow}
+                setMMRShow={setMMRShow}
+                userId={userId}
+                onClose={() => setMMRShow(false)}
+            />
         </div>
     );
 };

@@ -2,6 +2,7 @@ import './Dashboard.scss';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import UserProfile from '../../components/UserProfile/UserProfile';
+import MMRTracker from '../../components/MMRTracker/MMRTracker';
 
 function Dashboard() {
     const [user, setUser] = useState(null);
@@ -43,15 +44,21 @@ function Dashboard() {
         )
     }
 
-    const {user_name, discord_name, epic_id, mmr_standard, user_bio} = user
+    const {id, user_name, discord_name, epic_id, mmr_standard, user_bio, created_on} = user
     return (
         <div className='dashboard'>
-            <UserProfile 
+            <UserProfile
+                userId={id}
                 userName={user_name}
                 discord={discord_name}
                 epic={epic_id}
                 mmr={mmr_standard}
                 bio={user_bio}
+            />
+            <MMRTracker
+                userId={id}
+                mmr={mmr_standard}
+                initialMMR={created_on}
             />
         </div>
     );

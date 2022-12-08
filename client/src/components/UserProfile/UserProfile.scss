@@ -5,6 +5,7 @@
 .profile {
     display: flex;
     flex-direction: column;
+    position: relative;
     background-color: colors.$dark-blue;
     margin: 1.5rem;
     padding: .5rem;
