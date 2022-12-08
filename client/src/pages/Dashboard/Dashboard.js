@@ -58,7 +58,7 @@ function Dashboard() {
             <MMRTracker
                 userId={id}
                 mmr={mmr_standard}
-                initialMMR={created_on}
+                initialMMRDate={created_on}
             />
         </div>
     );

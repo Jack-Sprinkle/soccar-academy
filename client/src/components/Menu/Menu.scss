@@ -3,6 +3,7 @@
 @use '../../styles/responsive';
 
 .menu {
+    z-index: 1;
     position: absolute;
     top: .9rem;
     left: 1.2rem;

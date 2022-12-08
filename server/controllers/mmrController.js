@@ -6,6 +6,7 @@ exports.getMMR = async(req, resp) => {
         const userMMR = await knex('mmr')
             .select('mmr_standard', 'updated_at')
             .where({user_id: req.params.userId})
+            .orderBy('mmr.updated_at', 'desc')
         
         resp.status(200).json(userMMR)
     } catch(error) {
