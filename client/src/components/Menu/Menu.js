@@ -3,6 +3,12 @@ import {Link} from 'react-router-dom';
 
 function Menu({show, onClose}) {
 
+    const token = sessionStorage.getItem('token');
+
+    const handleLogout = () => {
+        sessionStorage.removeItem('token');
+    }
+
     if(!show) {
         return (
             null
@@ -22,6 +28,7 @@ function Menu({show, onClose}) {
                 <Link to='/' onClick={onClose}><li className='menu__list-item'>Forums</li></Link>
                 <Link to='/about' onClick={onClose}><li className='menu__list-item'>About</li></Link>
                 <Link to='/support' onClick={onClose}><li className='menu__list-item'>Support</li></Link>
+                <li onClick={handleLogout} className='menu__list-item'>Log Out</li>
             </ul>          
         </div>
     );

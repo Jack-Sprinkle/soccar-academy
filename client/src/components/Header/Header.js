@@ -2,10 +2,12 @@ import './Header.scss';
 import logo from '../../assets/images/Group.svg';
 import Menu from '../Menu/Menu';
 import {useState} from 'react';
+import Login from '../Login/Login';
 
 function Header() {
 
     const [show, setShow] = useState(false);
+    const [loginShow, setLoginShow] = useState(false)
     
     return (
         <>
@@ -20,7 +22,12 @@ function Header() {
                     show={show}
                     onClose={() => setShow(false)}
                 />
-                <p className='header__link'>Log in</p>
+                <p onClick={() => setLoginShow(true)}className='header__link'>Log in</p>
+                <Login
+                    loginShow={loginShow}
+                    setLoginShow={setLoginShow}
+                    onClose={() => setLoginShow(false)}
+                />
             </nav>
         </>
     );
