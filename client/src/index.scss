@@ -1,8 +1,11 @@
+@use './styles/colors';
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 html, body {
+  background-color: colors.$off-white;
   margin: 0;
   font-family: 'poppins', sans-serif;
 }

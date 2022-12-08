@@ -26,7 +26,7 @@ exports.getSinglePost = async(req, resp) => {
     try {
         const singlePost = await knex('posts')
             .join('users', 'posts.user_id', '=', 'users.id')
-            .where({'posts.id': req.params.postId})
+            .where({'posts.id': req.params.postId}).first()
             .select(
                 'posts.title', 
                 'posts.content',

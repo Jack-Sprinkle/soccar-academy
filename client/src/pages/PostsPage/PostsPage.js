@@ -10,9 +10,9 @@ function PostsPage() {
     const [threads, setThreads] = useState(null)
 
     //Make axios call on mount of components
-    const category = useParams();
+    const {category} = useParams();
     useEffect(() => {
-        axios.get(`http://localhost:8080/posts/${category.category}`)
+        axios.get(`http://localhost:8080/posts/${category}`)
         .then(response => {
             setThreads(response.data)
         })
@@ -44,7 +44,7 @@ function PostsPage() {
 
     return (
         <div>
-            <h2 className='post__category'>{category.category} Discussion</h2>
+            <h2 className='post__category'>{category} Discussion</h2>
             <button className='post__new-button'>New Post</button>
             {threads.map((thread) => {
                 const {id, title, content, created_on, user_name} = thread;
