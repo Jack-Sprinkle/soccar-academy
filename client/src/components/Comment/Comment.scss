@@ -1,0 +1,29 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
+.comment {
+    background-color: colors.$grey;
+    border-radius: .25rem;
+    padding: .5rem .5rem;
+    width: 75%;
+    align-self: flex-end;
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+
+        &-text {
+            color: colors.$black;
+            font-size: .875rem;
+            line-height: 1.125rem;
+            font-weight: 500;
+        }
+    }
+
+    &__content {
+        color: colors.$black;
+        font-size: .75rem;
+        line-height: 1.125rem;
+    }
+}

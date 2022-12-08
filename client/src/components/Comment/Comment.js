@@ -7,7 +7,7 @@ function Comment({content, timestamp, user}) {
                 <h3 className='comment__info-text'>{user}</h3>
                 <h3 className='comment__info-text'>{timestamp}</h3>
             </div>
-            <p>{content}</p>
+            <p className='comment__content'>{content}</p>
         </div>
     );
 };

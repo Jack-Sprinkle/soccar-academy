@@ -45,8 +45,8 @@ function ThreadPage() {
 
     updatedTime(comments)
     return (
-        <>
-            <div className='thread'>
+        <div className='thread'>
+            <div className='thread__info'>
                 <h2 className='thread__title'>{post.title}</h2>
                 <button className='thread__reply'>Reply</button>
                 <div className='thread__content'>
@@ -65,8 +65,9 @@ function ThreadPage() {
                     />
                 )
             })}
+            <button className='thread__reply'>Reply</button>
              
-        </>
+        </div>
     );
 };
 

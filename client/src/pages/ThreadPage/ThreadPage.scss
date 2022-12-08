@@ -1,4 +1,45 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
 .thread {
     display: flex;
     flex-direction: column;
+    margin: 1rem 1rem 0 1rem;
+    gap: 1rem;
+
+    &__title {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 500;
+    }
+
+    &__reply {
+        margin-top: 1rem;
+        border-radius: .25rem;
+        color: colors.$white;
+        background-color: colors.$orange;
+        border: 1px solid colors.$orange;
+        width: 4.5rem;
+        height: 2rem;
+        font-size: .75rem;
+        line-height: 1rem;
+        font-weight: 700;
+
+        &:hover {
+            background-color: colors.$orange-hover;
+            border: 1px solid colors.$orange-hover;
+        }
+    }
+
+    &__content {
+        margin-top: 1rem;
+        color: colors.$white;
+        font-size: .875rem;
+        line-height: 1.25rem;
+        padding: .5rem .5rem;
+        background-color:  colors.$dark-blue;
+        border-radius: .25rem;
+    }
 }
