@@ -42,9 +42,10 @@ function Dashboard() {
             </div>
         )
     }
+
     const {user_name, discord_name, epic_id, mmr_standard, user_bio} = user
     return (
-        <div>
+        <div className='dashboard'>
             <UserProfile 
                 userName={user_name}
                 discord={discord_name}

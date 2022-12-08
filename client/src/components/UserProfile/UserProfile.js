@@ -3,17 +3,17 @@ import './UserProfile.scss';
 function UserProfile({userName, discord, epic, mmr, bio}) {
     return (
         <div className='profile'>
-            <h2>Profile</h2>
+            <h2 className='profile__heading'>Profile</h2>
             <div className='profile__info'>
                 <div className='profile__info-container'>
-                    <p>{userName}</p>
-                    <p>{discord}</p>
-                    <p>{epic}</p>
-                    <p>Standard MMR: {mmr}</p>
+                    <p className='profile__info-text'>Username: {userName}</p>
+                    <p className='profile__info-text'>Discord: {discord}</p>
+                    <p className='profile__info-text'>Epic Id: {epic}</p>
+                    <p className='profile__info-text'>Standard MMR: {mmr}</p>
                 </div>
-                <p>{bio}</p>
+                <p className='profile__info-text'>{bio}This is where a bio will go</p>
             </div>
-            <button>Update MMR</button>
+            <button className='profile__update'>Update MMR</button>
         </div>
     );
 };
