@@ -11,6 +11,7 @@ import ThreadPage from './pages/ThreadPage/ThreadPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>

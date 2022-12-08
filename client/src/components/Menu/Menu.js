@@ -1,12 +1,12 @@
 import './Menu.scss';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 function Menu({show, onClose}) {
-
-    const token = sessionStorage.getItem('token');
-
+    const navigate = useNavigate()
     const handleLogout = () => {
         sessionStorage.removeItem('token');
+        onClose()
+        navigate('/')
     }
 
     if(!show) {
@@ -23,7 +23,7 @@ function Menu({show, onClose}) {
             <ul className='menu__list'>
                 <li className='menu__list-item'>Create Account</li>
                 <li className='menu__list-item'>Log in</li>
-                <li className='menu__list-item'>Dashboard</li>
+                <Link to='/dashboard' onClick={onClose}><li className='menu__list-item'>Dashboard</li></Link>
                 <li className='menu__list-item'>Find Coach</li>
                 <Link to='/' onClick={onClose}><li className='menu__list-item'>Forums</li></Link>
                 <Link to='/about' onClick={onClose}><li className='menu__list-item'>About</li></Link>
