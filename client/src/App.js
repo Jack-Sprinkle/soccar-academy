@@ -11,6 +11,7 @@ import ThreadPage from './pages/ThreadPage/ThreadPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import FindCoachPage from './pages/FIndCoachPage/FindCoachPage';
 import CreatePost from './pages/CreatePost/CreatePost';
+import CreateAccount from './pages/CreateAccount/CreateAccount';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
+          <Route path='/create-account' element={<CreateAccount />}></Route>
           <Route path='/about' element={<AboutPage />}></Route>
           <Route path='/support' element={<SupportPage />}></Route>
           <Route path='/:category' element={<PostsPage />}></Route>

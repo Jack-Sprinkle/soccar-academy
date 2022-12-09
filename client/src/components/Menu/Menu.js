@@ -27,7 +27,7 @@ function Menu({setLoginShow, show, onClose}) {
             </div>
             <ul className='menu__list'>
                 <Link to='/' onClick={onClose}><li className='menu__list-item'>Home</li></Link>
-                <li className='menu__list-item'>Create Account</li>
+                <Link to='/create-account' onClick={onClose}><li className='menu__list-item'>Create Account</li></Link>
                 <li onClick={openLogin} className='menu__list-item'>Log in</li>
                 <Link to='/dashboard' onClick={onClose}><li className='menu__list-item'>Dashboard</li></Link>
                 <Link to='/coaches' onClick={onClose}><li className='menu__list-item'>Find Coach</li></Link>

@@ -40,17 +40,20 @@ function ThreadPage() {
     const handleSubmit = async(values) => {
         const token = sessionStorage.getItem('token')
         axios
+            //Get current user
             .get('http://localhost:8080/users/current', {
                 headers: {
                     Authorization: `Bearer: ${token}`
                 }
             })
             .then(response => {
+                //Create new comment
                 const userId = response.data.id
                 const newComment = {
                     user_id: userId,
                     content: values.comment
                 }
+                //Post comment to server
                 return axios.post(`http://localhost:8080/comments/${postId}`, newComment, {
                     headers: {
                         Authorization: `Bearer: ${token}`
@@ -58,9 +61,10 @@ function ThreadPage() {
                 })
             })
             .then(response => {
-                console.log(response)
+                //Get comments to re-render
                 return axios.get(`http://localhost:8080/comments/${postId}`)
             })
+            //Set comments to new comments
             .then(response => {
                 setComments(response.data)
             })
