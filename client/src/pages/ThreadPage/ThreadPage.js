@@ -3,6 +3,12 @@ import {useParams} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import Comment from '../../components/Comment/Comment';
+import {Formik, Form, Field} from 'formik';
+import * as Yup from 'yup';
+
+const commentSchema = Yup.object().shape({
+    comment: Yup.string().min(2, 'Too short!').required('This field is required')
+})
 
 function ThreadPage() {
     const {category, postId} = useParams();
@@ -52,11 +58,14 @@ function ThreadPage() {
     }
     updatedPostTime(post)
 
+    const handleSubmit = (values) => {
+
+    }
+
     return (
         <div className='thread'>
             <div className='thread__info'>
                 <h2 className='thread__title'>{post.title}</h2>
-                <button className='thread__reply'>Comment</button>
                 <div className='thread__content'>
                     <div className='thread__content-container'>
                         <p>{post.user_name}</p>
@@ -64,6 +73,29 @@ function ThreadPage() {
                     </div>
                     <p>{post.content}</p>
                 </div>
+                <Formik
+                    initialValues={{
+                        comment: ''
+                    }}
+
+                    validationSchema={commentSchema}
+                    onSubmit={values => {
+                        handleSubmit(values)
+                    }}
+                >
+                    {({errors, touched}) => (
+                        <Form className='comment__form'>
+                            <div className='comment__form-input-container'>
+                                <Field as='textarea' placeholder='Leave a comment...' className={`comment__form-input ${errors.comment && touched.comment ? 'comment__form-input--invalid' : ''}`} name='comment'></Field>
+                                {errors.comment && touched.comment ? (
+                                    <div className='comment__form-errors'>{errors.comment}</div>
+                                ) : null}
+                            </div>
+                            <button className='comment__form-submit' type='submit'>Comment</button>
+                        </Form>
+                    )}
+                </Formik>
+                
             </div>
             <h3 className={`${comments.length === 0 ? 'no__comments' : 'comments--displayed'}`}>No comments currently, be the first!</h3>
             {comments.map((comment) =>{
