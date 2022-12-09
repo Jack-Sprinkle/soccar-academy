@@ -46,7 +46,7 @@ function PostsPage() {
     return (
         <div className='post__container'>
             <h2 className='post__category'>{category} Discussion</h2>
-            <button className='post__new-button'>New Post</button>
+            <Link to={`/${category}/newpost`}><button className='post__new-button'>New Post</button></Link>
             <h3 className={`${threads.length === 0 ? 'no__posts' : 'posts--displayed'}`}>No posts currently, be the first!</h3>
             {threads.map((thread) => {
                 const {id, title, content, created_on, user_name} = thread;
