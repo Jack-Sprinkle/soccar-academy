@@ -5,7 +5,8 @@
 }
 
 html, body {
-  background-color: colors.$off-white;
+  background: rgb(6,45,152);
+  background: linear-gradient(180deg, rgba(6,45,152,1) 0%, rgba(0,0,0,1) 100%);
   margin: 0;
   font-family: 'poppins', sans-serif;
 }

@@ -11,7 +11,18 @@ function SkillTracker() {
         if(localStorage.getItem('tasks')) {
             setTodoList(JSON.parse(localStorage.getItem('tasks')));
         }
+        
+        const countTasks = () => {
+            let counter = 0;
+            todoList.forEach((task) => {
+                if(task.complete) {
+                counter ++
+                }
+            })
+            return counter
+        }
 
+        setCompletedSkillsCount(countTasks())
     }, [])
 
     const handleClick = () => {
@@ -42,6 +53,7 @@ function SkillTracker() {
             };
             return item
         });
+        localStorage.setItem('tasks', JSON.stringify(list))
         setTodoList(list)
     }
 

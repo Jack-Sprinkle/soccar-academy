@@ -30,7 +30,7 @@ function Menu({setLoginShow, show, onClose}) {
                 <li className='menu__list-item'>Create Account</li>
                 <li onClick={openLogin} className='menu__list-item'>Log in</li>
                 <Link to='/dashboard' onClick={onClose}><li className='menu__list-item'>Dashboard</li></Link>
-                <li className='menu__list-item'>Find Coach</li>
+                <Link to='/coaches' onClick={onClose}><li className='menu__list-item'>Find Coach</li></Link>
                 <Link to='/' onClick={onClose}><li className='menu__list-item'>Forums</li></Link>
                 <Link to='/about' onClick={onClose}><li className='menu__list-item'>About</li></Link>
                 <Link to='/support' onClick={onClose}><li className='menu__list-item'>Support</li></Link>

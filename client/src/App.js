@@ -9,6 +9,7 @@ import SupportPage from './pages/SupportPage/SupportPage';
 import PostsPage from './pages/PostsPage/PostsPage';
 import ThreadPage from './pages/ThreadPage/ThreadPage';
 import Dashboard from './pages/Dashboard/Dashboard';
+import FindCoachPage from './pages/FIndCoachPage/FindCoachPage';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/:category' element={<PostsPage />}></Route>
           <Route path='/:category/:postId/comments' element={<ThreadPage />}></Route>
           <Route path='/dashboard' element={<Dashboard />}></Route>
+          <Route path='/coaches' element={<FindCoachPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
