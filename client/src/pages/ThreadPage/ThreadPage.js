@@ -65,6 +65,7 @@ function ThreadPage() {
                     <p>{post.content}</p>
                 </div>
             </div>
+            <h3 className={`${comments.length === 0 ? 'no__comments' : 'comments--displayed'}`}>No comments currently, be the first!</h3>
             {comments.map((comment) =>{
                 const {id, content, created_on, user_name} = comment;
                 return (

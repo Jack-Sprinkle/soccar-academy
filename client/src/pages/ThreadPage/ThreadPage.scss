@@ -48,3 +48,22 @@
         }
     }
 }
+
+.comments--displayed {
+    display: none;
+}
+
+.no__comments {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 22rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    color: colors.$white;
+    background-color: colors.$dark-blue;
+    border-radius: .25rem;
+}
