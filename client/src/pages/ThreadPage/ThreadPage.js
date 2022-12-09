@@ -11,11 +11,15 @@ const commentSchema = Yup.object().shape({
 })
 
 function ThreadPage() {
+    //Grab category and post id from params
     const {category, postId} = useParams();
 
+    //create state variables for posts, comments, and user
     const [post, setPost] = useState(null)
     const [comments, setComments] = useState(null)
+    const [user, setUser] = useState(null)
 
+    //Get post and comments on page load
     useEffect(() => {
         axios
             .get(`http://localhost:8080/posts/${category}/${postId}`)
@@ -31,6 +35,43 @@ function ThreadPage() {
 
     }, [])
 
+
+    //handle submit of comment
+    const handleSubmit = async(values) => {
+        const token = sessionStorage.getItem('token')
+        axios
+            .get('http://localhost:8080/users/current', {
+                headers: {
+                    Authorization: `Bearer: ${token}`
+                }
+            })
+            .then(response => {
+                const userId = response.data.id
+                const newComment = {
+                    user_id: userId,
+                    content: values.comment
+                }
+                return axios.post(`http://localhost:8080/comments/${postId}`, newComment, {
+                    headers: {
+                        Authorization: `Bearer: ${token}`
+                    }
+                })
+            })
+            .then(response => {
+                console.log(response)
+                return axios.get(`http://localhost:8080/comments/${postId}`)
+            })
+            .then(response => {
+                setComments(response.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+
+
+    //If there are no posts or comments, return loading...ie: server issue
     if(!post || !comments) {
         return (
             <div>
@@ -39,6 +80,7 @@ function ThreadPage() {
         )
     }
 
+    //knex timestamp is odd, update timestamp to more readable format
     const updatedTime = (array) => {
         comments?.map((comment) => {
             const dateObj = new Date(comment.created_on)
@@ -50,6 +92,7 @@ function ThreadPage() {
     }
     updatedTime(comments)
     
+    //same as comments, update the post timestamp
     const updatedPostTime = (object) => {
         const dateObj = new Date(post.created_on);
         const timestamp = dateObj.getTime();
@@ -57,10 +100,6 @@ function ThreadPage() {
         post.created_on = modifiedDate.toLocaleDateString();
     }
     updatedPostTime(post)
-
-    const handleSubmit = (values) => {
-
-    }
 
     return (
         <div className='thread'>
