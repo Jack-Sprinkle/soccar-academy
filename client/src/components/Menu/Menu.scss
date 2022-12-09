@@ -13,7 +13,8 @@
     padding: .5rem;
     border-radius: .25rem;
     width: 10rem;
-    box-shadow: 2px 3px 5px rgb(134, 133, 133);
+    border: 1px solid colors.$grey;
+    box-shadow: 2px 2px 2px colors.$grey;
 
     &__heading-container {
         display: flex;
