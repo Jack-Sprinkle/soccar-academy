@@ -10,6 +10,8 @@
     margin: 1.5rem;
     padding: .5rem;
     border-radius: .25rem;
+    width: 86%;
+    @include colors.boxshadow;
 
     &__heading {
         color: colors.$white;

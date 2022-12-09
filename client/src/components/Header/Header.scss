@@ -24,7 +24,8 @@
     }
 
     &__nav {
-        background-color: colors.$dark-blue;
+        background: rgb(6,45,152);
+        background: linear-gradient(0deg, rgba(6,45,152,1) 0%, rgba(0,0,0,1) 100%);
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -35,7 +36,8 @@
 
     &__menu {
         border: none;
-        background-color: colors.$dark-blue;
+        background: rgb(6,45,152);
+        background: linear-gradient(0deg, rgba(6,45,152,1) 0%, rgba(0,0,0,1) 100%);
         background-image: url('../../assets/icons/menu.svg');
         background-position: center;
         background-repeat: no-repeat;
