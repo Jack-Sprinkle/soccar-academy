@@ -1,0 +1,39 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
+.coach {
+    display: flex;
+    flex-direction: column;
+    background-color: colors.$dark-blue;
+    border-radius: .25rem;
+    @include colors.boxshadow;
+    padding: .5rem;
+    width: 83%;
+
+    &__heading {
+        color: colors.$white;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        text-align: center;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        gap: 1rem;
+
+        &-text {
+            color: colors.$white;
+            font-size: .75rem;
+            line-height: 1rem;
+            margin: 0;
+        }
+    }
+
+    &__container {
+        display: flex;
+    }
+}
