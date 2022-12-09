@@ -38,7 +38,7 @@ function FindCoachPage() {
     }, [])
 
     console.log(coaches)
-    const filteredCoaches = coaches.filter((coach) => coach.user_name !== user.user_name && coach.mmr_standard > user.mmr_standard);
+    const filteredCoaches = coaches?.filter((coach) => coach.user_name !== user.user_name && coach.mmr_standard > user.mmr_standard);
     console.log(filteredCoaches)
 
     if(failedAuth) {
