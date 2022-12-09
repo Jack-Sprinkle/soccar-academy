@@ -5,10 +5,13 @@
 .thread {
     display: flex;
     flex-direction: column;
-    margin: 1rem 1rem 0 1rem;
+    padding: 1rem 1rem 2rem 1rem;
     gap: 1rem;
+    @include colors.background;
+    height: 100%;
 
     &__title {
+        color: colors.$white;
         margin: 0;
         font-size: 1rem;
         line-height: 1.25rem;
@@ -40,6 +43,7 @@
         line-height: 1.25rem;
         padding: .5rem .5rem;
         background-color:  colors.$dark-blue;
+        @include colors.boxshadow;
         border-radius: .25rem;
 
         &-container {
@@ -57,13 +61,15 @@
     margin: 1rem auto;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
-    height: 3rem;
-    width: 22rem;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+    height: 3.5rem;
+    width: 70%;
+    font-size: 1rem;
+    line-height: 1.25rem;
     font-weight: 500;
     color: colors.$white;
     background-color: colors.$dark-blue;
+    @include colors.boxshadow;
     border-radius: .25rem;
 }

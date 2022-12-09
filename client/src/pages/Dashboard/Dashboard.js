@@ -31,16 +31,16 @@ function Dashboard() {
 
     if(failedAuth) {
         return (
-            <div>
-                <p>You must be logged in to see this page.</p>
+            <div className='failed__auth'>
+                <p className='failed__auth-text'>You must be logged in to see this page.</p>
             </div>
         )
     }
 
     if(!user) {
         return (
-            <div>
-                <p>Currently retrieving your dashboard...</p>
+            <div className='loading'>
+                <p className='loading__text'>Currently retrieving your dashboard...</p>
             </div>
         )
     }

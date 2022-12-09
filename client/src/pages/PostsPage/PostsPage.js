@@ -44,7 +44,7 @@ function PostsPage() {
 
 
     return (
-        <div>
+        <div className='post__container'>
             <h2 className='post__category'>{category} Discussion</h2>
             <button className='post__new-button'>New Post</button>
             <h3 className={`${threads.length === 0 ? 'no__posts' : 'posts--displayed'}`}>No posts currently, be the first!</h3>

@@ -3,10 +3,12 @@
 @use '../../styles/responsive';
 
 .post__category {
-    margin: 1rem;
+    padding-top: 1rem;
+    margin: 0 1rem 1rem 1rem;
     font-size: 1.125rem;
     line-height: 1.5rem;
     font-weight: 500;
+    color: colors.$white;
 }
 
 .post__new-button {
@@ -37,12 +39,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 3rem;
-    width: 18rem;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+    text-align: center;
+    height: 3.5rem;
+    width: 70%;
+    font-size: 1rem;
+    line-height: 1.25rem;
     font-weight: 500;
     color: colors.$white;
     background-color: colors.$dark-blue;
+    @include colors.boxshadow;
     border-radius: .25rem;
+}
+
+.post__container {
+    padding-bottom: 2rem;
+    height: 100vh;
+    @include colors.background;
 }
