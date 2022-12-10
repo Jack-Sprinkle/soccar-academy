@@ -17,6 +17,7 @@ function ThreadPage({user}) {
     //create state variables for posts, comments, and user
     const [post, setPost] = useState(null)
     const [comments, setComments] = useState(null)
+    const [error, setError] = useState(false)
 
     //Get post and comments on page load on mount
     useEffect(() => {
@@ -59,7 +60,7 @@ function ThreadPage({user}) {
                     values = ''
                 })
                 .catch(error => {
-                    console.log(error)
+                    setError(true)
                 })
     }
 
@@ -126,6 +127,7 @@ function ThreadPage({user}) {
                                 ) : null}
                             </div>
                             <button className='comment__form-submit' type='submit'>Comment</button>
+                            {error ? (<p className='error__message'>You must be logged in to comment</p>) : null}
                         </Form>
                     )}
                 </Formik>

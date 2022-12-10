@@ -20,7 +20,6 @@ function FindCoachPage({user, isLoggedIn}) {
             .then(response => {
                 setCoaches(response.data)
             }).catch(error => {
-                console.log(error)
             })
     }, [])
 
