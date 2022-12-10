@@ -8,12 +8,12 @@ const LoginSchema = Yup.object().shape({
 });
 
 
-function Login({loginShow, onClose, handleLogin, errorMessage}) {
+function Login({loginShow, onClose, handleLogin, errorMessage, isLoggedIn}) {
     
     if (!loginShow) {
         return null;
     }
-
+    console.log(isLoggedIn)
     return (
         <div className='login'>
             <div className='login__heading-container'>
@@ -54,6 +54,7 @@ function Login({loginShow, onClose, handleLogin, errorMessage}) {
                         </div>
                         <button className='login__submit' type='submit'>Login</button>
                         {errorMessage.length > 1 ? (<p className='response__message'>{errorMessage}</p>) : null}
+                        {isLoggedIn ? (<p className='response__message--success'>Login Successful!</p>) : null}
                     </Form>
                 )}
             </Formik>

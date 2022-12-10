@@ -124,4 +124,11 @@
     font-size: .75rem;
     line-height: 1rem;
     color: colors.$error;
+
+    &--success {
+        margin: 0;
+        font-size: .75rem;
+        line-height: 1rem;
+        color: colors.$black;
+    }
 }
