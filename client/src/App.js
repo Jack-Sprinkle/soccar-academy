@@ -13,7 +13,7 @@ import FindCoachPage from './pages/FIndCoachPage/FindCoachPage';
 import CreatePost from './pages/CreatePost/CreatePost';
 import CreateAccount from './pages/CreateAccount/CreateAccount';
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
 
 function App() {
@@ -42,6 +42,24 @@ function App() {
         })
   
   }
+
+  useEffect(() => {
+    const token = sessionStorage.getItem('token')
+    if(!token) {
+      setIsLoggedIn(false)
+    } else {
+      setIsLoggedIn(true)
+      axios.get('http://localhost:8080/users/current', {
+        headers: {
+          Authorization: `Bearer: ${token}`
+        }
+      }).then(response => {
+        setUser(response.data)
+      })
+    }
+  }, [])
+
+  console.log(isLoggedIn)
 
   return (
     <div className="App">
