@@ -20,7 +20,7 @@ function App() {
   
   const [user, setUser] = useState(null)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState(false)
 
   //handle login on submit of login form
   const handleLogin = (values) => {
@@ -39,8 +39,9 @@ function App() {
           })
         }).then(response => {
           setUser(response.data)
+          setErrorMessage(false)
         }).catch(error => {
-          setErrorMessage(error.response.data)
+          setErrorMessage(true)
         })
   
   }
