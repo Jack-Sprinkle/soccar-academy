@@ -25,7 +25,8 @@ function Header({handleLogin, setIsLoggedIn, isLoggedIn, setUser, user, errorMes
                     setIsLoggedIn={setIsLoggedIn}
                     setUser={setUser}
                 />
-                <p onClick={() => setLoginShow(true)}className='header__link'>Log in</p>
+                {isLoggedIn ? null : (<p onClick={() => setLoginShow(true)}className='header__link'>Log in</p>)}
+                {isLoggedIn ? (<p className='user__name--logged-in'>{user?.user_name}</p>) : null}
                 <Login
                     handleLogin={handleLogin}
                     isLoggedIn={isLoggedIn}

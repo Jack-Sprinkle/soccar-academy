@@ -13,7 +13,7 @@ function Login({loginShow, onClose, handleLogin, errorMessage, isLoggedIn}) {
     if (!loginShow) {
         return null;
     }
-
+    
     return (
         <div className='login'>
             <div className='login__heading-container'>

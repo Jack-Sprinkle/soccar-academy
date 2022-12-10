@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header handleLogin={handleLogin} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setUser={setUser} errorMessage={errorMessage}/>
+        <Header handleLogin={handleLogin} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setUser={setUser} user={user} errorMessage={errorMessage}/>
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/create-account' element={<CreateAccount isLoggedIn={isLoggedIn} />}></Route>
