@@ -99,3 +99,18 @@ exports.current = async(req, resp) => {
     delete user.user_password;
     resp.json(user);
 }
+
+exports.updateMMR = async(req, resp) => {
+    if(!req.body.mmr_standard) {
+        return resp.status(400).send(`Please send updated MMR`)
+    }
+    
+    try {
+        await knex('users')
+            .where({id: req.user.id}).first()
+            .update(req.body);
+        resp.status(200).send(`MMR Successfully updated`)
+    } catch (error) {
+        resp.status(400).send(`Failed to update MMR`)
+    }
+}

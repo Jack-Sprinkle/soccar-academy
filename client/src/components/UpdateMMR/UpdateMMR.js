@@ -18,7 +18,6 @@ function MMR({userId, mmrShow, setMMRShow, onClose}) {
 
    
     const handleSubmit = (values) => {
-        console.log(values)
         const updatedMMR = {
             mmr_standard: values.mmr,
             user_id: userId
@@ -30,7 +29,18 @@ function MMR({userId, mmrShow, setMMRShow, onClose}) {
         })
         .then(response => {
             console.log(response)
-            onClose()
+            const mmrToUpdate = {
+                mmr_standard: updatedMMR.mmr_standard
+            }
+            return axios.put('http://localhost:8080/users/mmr', mmrToUpdate, {
+                headers: {
+                    Authorization: `Bearer: ${token}`
+                }
+            })
+            .then(response => {
+                console.log(response)
+                onClose()
+            })
         }).catch(error => {
             console.log(error)
         })

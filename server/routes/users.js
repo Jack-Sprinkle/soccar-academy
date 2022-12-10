@@ -15,4 +15,8 @@ router
     .route('/current')
     .get(authorize, usersController.current);
 
+router
+    .route('/mmr')
+    .put(authorize, usersController.updateMMR);
+
 module.exports = router;
