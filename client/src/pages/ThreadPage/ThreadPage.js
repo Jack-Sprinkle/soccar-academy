@@ -18,7 +18,7 @@ function ThreadPage({user}) {
     const [post, setPost] = useState(null)
     const [comments, setComments] = useState(null)
 
-    //Get post and comments on page load
+    //Get post and comments on page load on mount
     useEffect(() => {
         axios
             .get(`http://localhost:8080/posts/${category}/${postId}`)
@@ -35,12 +35,12 @@ function ThreadPage({user}) {
     }, [])
 
 
-    //handle submit of comment
+    //handle submit of comment and reload comments
     const handleSubmit = async(values) => {
         const token = sessionStorage.getItem('token')
 
         const newComment = {
-            user_id: user.id,
+            user_id: user?.id,
             content: values.comment
         }
         axios

@@ -1,24 +1,11 @@
 import './Dashboard.scss';
-import {useState, useEffect} from 'react';
-import axios from 'axios';
 import UserProfile from '../../components/UserProfile/UserProfile';
 import MMRTracker from '../../components/MMRTracker/MMRTracker';
 import SkillTracker from '../../components/SkillTracker/SkillTracker';
 
-function Dashboard({user}) {
-    const [failedAuth, setFailedAuth] = useState(null);
-    
-    //check on mount if user has a token.
-    useEffect(() => {
-        const token = sessionStorage.getItem('token')
-  
-        if(!token) {
-            return setFailedAuth(true);
-        }
-    }, [])
+function Dashboard({user, isLoggedIn}) {
 
-
-    if(failedAuth) {
+    if(!isLoggedIn) {
         return (
             <div className='failed__auth'>
                 <p className='failed__auth-text'>You must be logged in to see this page.</p>

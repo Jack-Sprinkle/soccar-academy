@@ -3,23 +3,15 @@ import {useEffect, useState} from 'react';
 import axios from 'axios'
 import CoachCard from '../../components/CoachCard/CoachCard';
 
-function FindCoachPage({user}) {
-    
-    //initialize failed authentication state
-    const [failedAuth, setFailedAuth] = useState(null);
+function FindCoachPage({user, isLoggedIn}) {
 
     //initialize list of coaches
     const [coaches, setCoaches] = useState(null);
     
-    //on mount verify user and get list of all coaches.
+    //on mount get list of all coaches.
     useEffect(() => {
       const token = sessionStorage.getItem('token')
         
-      //if user doesn't have a token, set failed auth. early return.
-      if(!token) {
-        return setFailedAuth(true);
-      }
-      
         axios.get('http://localhost:8080/coaches', {
             headers: {
                 Authorization: `Bearer: ${token}`
@@ -34,13 +26,21 @@ function FindCoachPage({user}) {
 
 
     //filter list of coaches to exclude the user, and coaches with a lower mmr
-    const filteredCoaches = coaches?.filter((coach) => coach.user_name !== user.user_name && coach.mmr_standard > user.mmr_standard);
+    const filteredCoaches = coaches?.filter((coach) => coach?.user_name !== user?.user_name && coach?.mmr_standard > user?.mmr_standard);
 
-    //if user failes auth check early return
-    if(failedAuth) {
+    //if user is not logged in early return
+    if(!isLoggedIn) {
         return (
             <div className='failed__auth'>
                 <p className='failed__auth-text'>You must be logged in to see this page.</p>
+            </div>
+        )
+    }
+
+    if(!user) {
+        return (
+            <div className='failed__auth'>
+                <p className='failed__auth-text'>Loading...</p>
             </div>
         )
     }

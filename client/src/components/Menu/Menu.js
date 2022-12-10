@@ -1,10 +1,12 @@
 import './Menu.scss';
 import {Link, useNavigate} from 'react-router-dom';
 
-function Menu({setLoginShow, show, onClose}) {
+function Menu({setLoginShow, show, onClose, setIsLoggedIn, setUser}) {
     const navigate = useNavigate()
     const handleLogout = () => {
         sessionStorage.removeItem('token');
+        setUser(null);
+        setIsLoggedIn(false);
         onClose()
         navigate('/')
     }

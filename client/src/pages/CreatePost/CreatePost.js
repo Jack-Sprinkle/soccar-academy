@@ -10,22 +10,12 @@ const newPostSchema = Yup.object().shape({
     content: Yup.string().min(3, 'Too Short!').required('This field is required!')
 })
 
-function CreatePost({user}) {
+function CreatePost({user, isLoggedIn}) {
     const navigate = useNavigate();
     const {category} = useParams()
-    const [failedAuth, setFailedAuth] = useState(null);
-    
-    //check if user has token on mount, if not early return.
-    useEffect(() => {
-      const token = sessionStorage.getItem('token')
-  
-      if(!token) {
-        return setFailedAuth(true);
-      }
-  
-    }, [])
 
-    if(failedAuth) {
+    //If a user is not logged in, early return
+    if(!isLoggedIn) {
         return (
             <div className='failed__auth'>
                 <p className='failed__auth-text'>You must be logged in to create a new post</p>
@@ -40,7 +30,7 @@ function CreatePost({user}) {
             </div>
         )
     }
-
+    //handle submit of new post. 
     const handleSubmit = (values) => {
         const token = sessionStorage.getItem('token')
         const newPost = {

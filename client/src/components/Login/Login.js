@@ -1,8 +1,6 @@
 import './Login.scss';
 import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('This field is required'),
@@ -10,28 +8,10 @@ const LoginSchema = Yup.object().shape({
 });
 
 
-function Login({setLoginShow, loginShow, onClose, setIsLoggedIn}) {
-    const navigate = useNavigate();
+function Login({loginShow, onClose, handleLogin}) {
     
     if (!loginShow) {
         return null;
-    }
-
-   
-    const handleSubmit = (values) => {
-        const user = {
-            user_email: values.email,
-            user_password: values.password
-        }
-        axios.post('http://localhost:8080/users/login', user)
-        .then(response => {
-            sessionStorage.setItem('token', response.data.token);
-            setIsLoggedIn(true);
-            navigate(-1)
-            setLoginShow(false)
-        }).catch(error => {
-            console.log(error)
-        })
     }
 
     return (
@@ -48,7 +28,7 @@ function Login({setLoginShow, loginShow, onClose, setIsLoggedIn}) {
 
                 validationSchema={LoginSchema}
                 onSubmit={values => {
-                    handleSubmit(values)
+                    handleLogin(values)
                 }}
             >
                 {({errors, touched}) => (

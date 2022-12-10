@@ -4,7 +4,7 @@ import Menu from '../Menu/Menu';
 import {useState} from 'react';
 import Login from '../Login/Login';
 
-function Header({setIsLoggedIn}) {
+function Header({handleLogin, setIsLoggedIn, setUser}) {
 
     const [show, setShow] = useState(false);
     const [loginShow, setLoginShow] = useState(false)
@@ -22,10 +22,12 @@ function Header({setIsLoggedIn}) {
                     setLoginShow={setLoginShow} 
                     show={show}
                     onClose={() => setShow(false)}
+                    setIsLoggedIn={setIsLoggedIn}
+                    setUser={setUser}
                 />
                 <p onClick={() => setLoginShow(true)}className='header__link'>Log in</p>
                 <Login
-                    setIsLoggedIn={setIsLoggedIn}
+                    handleLogin={handleLogin}
                     loginShow={loginShow}
                     setLoginShow={setLoginShow}
                     onClose={() => setLoginShow(false)}
