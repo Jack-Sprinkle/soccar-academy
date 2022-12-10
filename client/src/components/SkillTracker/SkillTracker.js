@@ -7,22 +7,23 @@ function SkillTracker() {
     const [todoList, setTodoList] = useState([]);
     const [completedSkillsCount, setCompletedSkillsCount] = useState(0);
 
+    //Set up to do list on refresh/mount
     useEffect(() => {
+        let list = []
         if(localStorage.getItem('tasks')) {
-            setTodoList(JSON.parse(localStorage.getItem('tasks')));
-        }
-        
-        const countTasks = () => {
-            let counter = 0;
-            todoList.forEach((task) => {
-                if(task.complete) {
-                counter ++
-                }
-            })
-            return counter
-        }
+            list = (JSON.parse(localStorage.getItem('tasks')));
+            setTodoList(list)
 
-        setCompletedSkillsCount(countTasks())
+            if(list.length > 1) {
+                let counter = 0
+                for(let i = 0; i < list.length; i++) {
+                    if(list[i].complete) {
+                        counter ++
+                    }
+                }
+                setCompletedSkillsCount(counter)
+            }
+        }
     }, [])
 
     const handleClick = () => {
