@@ -50,7 +50,6 @@ function ThreadPage({user}) {
                     }
                 })
                 .then(response => {
-                    console.log(response)
                     //Get comments to re-render
                     return axios.get(`http://localhost:8080/comments/${postId}`)
                 })
