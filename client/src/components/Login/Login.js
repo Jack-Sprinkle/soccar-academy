@@ -27,8 +27,9 @@ function Login({loginShow, onClose, handleLogin}) {
                 }}
 
                 validationSchema={LoginSchema}
-                onSubmit={values => {
+                onSubmit={(values, {resetForm}) => {
                     handleLogin(values)
+                    resetForm()
                 }}
             >
                 {({errors, touched}) => (

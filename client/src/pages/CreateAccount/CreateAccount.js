@@ -15,9 +15,34 @@ const newAccountSchema = Yup.object().shape({
     coach: Yup.string().required()
 });
 
-function CreateAccount() {
+function CreateAccount({isLoggedIn}) {
     const handleSubmit = (values) => {
+        console.log(values)
+        const newUser = {
+            user_name: values.username,
+            user_email: values.email,
+            user_password: values.password,
+            epic_id: values.epicId,
+            discord_name: values.discordId,
+            mmr_standard: values.standardMMR,
+            user_bio: values.bio,
+            user_coach: values.coach
+        }
 
+        axios.post('http://localhost:8080/users/register', newUser)
+            .then(response => {
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
+            })
+    }
+
+    if(isLoggedIn) {
+        return (
+            <div>
+                Already logged in
+            </div>
+        )
     }
 
     return (
@@ -36,8 +61,9 @@ function CreateAccount() {
                 }}
 
                 validationSchema={newAccountSchema}
-                onSubmit={values => {
+                onSubmit={(values, {resetForm}) => {
                     handleSubmit(values)
+                    resetForm();
                 }}
             >
                 {({errors, touched}) => (
@@ -85,7 +111,7 @@ function CreateAccount() {
 
                             <label className='new__label'>  
                                 Bio
-                                <Field as='textarea' className={`new__input ${errors.bio && touched.bio ? 'new__input--invalid' : ''}`} name='bio'/>
+                                <Field as='textarea' className={`new__input--large ${errors.bio && touched.bio ? 'new__input--invalid' : ''}`} name='bio'/>
                             </label>
                             {errors.bio && touched.bio ? (
                             <div className='new__errors'>{errors.bio}</div>
@@ -100,7 +126,7 @@ function CreateAccount() {
                             ) : null}
 
                             <div className='new__radio'>  
-                                <h3>Willing to coach?</h3>
+                                <h3 className='new__radio-heading'>Willing to coach?</h3>
                                 <label className='new__radio-button'>
                                     Yes
                                     <Field type='radio' className={`new__radio ${errors.password && touched.password ? 'new__radio--invalid' : ''}`} name='coach' value='yes'/>
@@ -109,11 +135,13 @@ function CreateAccount() {
                                     No
                                     <Field type='radio' className={`new__radio ${errors.password && touched.password ? 'new__radio--invalid' : ''}`} name='coach' value='no'/>
                                 </label>
+                                <p className='new__radio-text'>*Selecting yes will allow other user to see your coach card under the "Find Coach" page. This will display your: Username, Epic Id, MMR, and Discord for users to contact you.</p>
                             </div>
                             {errors.password && touched.password ? (
                             <div className='new__errors'>{errors.password}</div>
                             ) : null}
                         </div>
+                        <button className='new__submit' type='submit'>Create Account</button>
                     </Form>
                 )}   
             </Formik>

@@ -3,7 +3,6 @@ import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import {useState, useEffect} from 'react';
 
 const newPostSchema = Yup.object().shape({
     title: Yup.string().min(3, 'Too Short!').max(200, 'Too Long!').required('This field is required!'),

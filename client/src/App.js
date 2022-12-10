@@ -43,16 +43,13 @@ function App() {
   
   }
 
-  console.log(isLoggedIn)
-  console.log(user)
-
   return (
     <div className="App">
       <BrowserRouter>
         <Header handleLogin={handleLogin} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
-          <Route path='/create-account' element={<CreateAccount />}></Route>
+          <Route path='/create-account' element={<CreateAccount isLoggedIn={isLoggedIn} />}></Route>
           <Route path='/about' element={<AboutPage />}></Route>
           <Route path='/support' element={<SupportPage />}></Route>
           <Route path='/:category' element={<PostsPage />}></Route>
