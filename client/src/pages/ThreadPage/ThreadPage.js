@@ -17,7 +17,6 @@ function ThreadPage() {
     //create state variables for posts, comments, and user
     const [post, setPost] = useState(null)
     const [comments, setComments] = useState(null)
-    const [user, setUser] = useState(null)
 
     //Get post and comments on page load
     useEffect(() => {

@@ -1,5 +1,5 @@
 import './CreatePost.scss';
-import {Formik, Form, Field, FormikProvider} from 'formik';
+import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
