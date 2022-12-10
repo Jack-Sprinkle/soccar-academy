@@ -2,6 +2,7 @@ import './CreateAccount.scss';
 import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import { useState } from 'react';
 
 //Set up form validation schema
 const newAccountSchema = Yup.object().shape({
@@ -16,6 +17,12 @@ const newAccountSchema = Yup.object().shape({
 });
 
 function CreateAccount({isLoggedIn}) {
+    const API_KEY = process.env.REACT_APP_API_KEY;
+
+    const [apiResponse, setAPIResponse] = useState(null) 
+    const [error, setError] = useState(null)
+    const [success, setSuccess] = useState(null)
+
     const handleSubmit = (values) => {
         const newUser = {
             user_name: values.username,
@@ -28,11 +35,11 @@ function CreateAccount({isLoggedIn}) {
             user_coach: values.coach
         }
 
-        axios.post('http://localhost:8080/users/register', newUser)
+        axios.post(`${API_KEY}/users/register`, newUser)
             .then(response => {
-                console.log(response)
+                setSuccess(response.data)
             }).catch(error => {
-                console.log(error)
+                setError(error.response.data)
             })
     }
 
@@ -141,6 +148,8 @@ function CreateAccount({isLoggedIn}) {
                             ) : null}
                         </div>
                         <button className='new__submit' type='submit'>Create Account</button>
+                        {error ? (<p className='error__response'>{error}</p>) : null}
+                        {success ? (<p className='success__response'>{success}</p>) : null}
                     </Form>
                 )}   
             </Formik>

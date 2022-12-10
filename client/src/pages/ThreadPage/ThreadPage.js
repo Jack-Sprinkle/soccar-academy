@@ -14,6 +14,8 @@ function ThreadPage({user}) {
     //Grab category and post id from params
     const {category, postId} = useParams();
 
+    const API_KEY = process.env.REACT_APP_API_KEY;
+
     //create state variables for posts, comments, and user
     const [post, setPost] = useState(null)
     const [comments, setComments] = useState(null)
@@ -22,10 +24,10 @@ function ThreadPage({user}) {
     //Get post and comments on page load on mount
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/posts/${category}/${postId}`)
+            .get(`${API_KEY}/posts/${category}/${postId}`)
             .then(response => {
                 setPost(response.data)
-                return axios.get(`http://localhost:8080/comments/${postId}`)
+                return axios.get(`${API_KEY}/comments/${postId}`)
             })
             .then(response => {
                 setComments(response.data)
@@ -45,14 +47,14 @@ function ThreadPage({user}) {
             content: values.comment
         }
         axios
-            .post(`http://localhost:8080/comments/${postId}`, newComment, {
+            .post(`${API_KEY}/comments/${postId}`, newComment, {
                     headers: {
                         Authorization: `Bearer: ${token}`
                     }
                 })
                 .then(response => {
                     //Get comments to re-render
-                    return axios.get(`http://localhost:8080/comments/${postId}`)
+                    return axios.get(`${API_KEY}/comments/${postId}`)
                 })
                 //Set comments to new comments
                 .then(response => {

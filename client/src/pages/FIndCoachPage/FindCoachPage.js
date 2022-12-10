@@ -7,12 +7,14 @@ function FindCoachPage({user, isLoggedIn}) {
 
     //initialize list of coaches
     const [coaches, setCoaches] = useState(null);
+
+    const API_KEY = process.env.REACT_APP_API_KEY
     
     //on mount get list of all coaches.
     useEffect(() => {
       const token = sessionStorage.getItem('token')
         
-        axios.get('http://localhost:8080/coaches', {
+        axios.get(`${API_KEY}/coaches`, {
             headers: {
                 Authorization: `Bearer: ${token}`
             }

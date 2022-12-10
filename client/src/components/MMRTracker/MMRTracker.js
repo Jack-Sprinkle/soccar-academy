@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react';
 
 function MMRTracker({userId}) {
 
+    const API_KEY = process.env.REACT_APP_API_KEY
     const [mmrData, setMMRData] = useState(null)
     const token = sessionStorage.getItem('token')
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/mmr/${userId}`, {
+        axios.get(`${API_KEY}/mmr/${userId}`, {
             headers: {
                 Authorization: `Bearer: ${token}`
             }

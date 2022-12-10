@@ -2,7 +2,6 @@ import './UpdateMMR.scss';
 import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-import {forceUpdate} from 'react'
 
 const LoginSchema = Yup.object().shape({
     mmr: Yup.string().required('This field is required')
@@ -11,6 +10,7 @@ const LoginSchema = Yup.object().shape({
 
 function MMR({userId, mmrShow, setMMRShow, onClose}) {
     const token = sessionStorage.getItem('token')
+    const API_KEY = process.env.REACT_APP_API_KEY
 
     if (!mmrShow) {
         return null;
@@ -25,7 +25,7 @@ function MMR({userId, mmrShow, setMMRShow, onClose}) {
             user_id: userId
         }
         //post MMR to mmr table to keep track of user MMR over time
-        axios.post(`http://localhost:8080/mmr/${userId}`, updatedMMR, {
+        axios.post(`${API_KEY}/mmr/${userId}`, updatedMMR, {
             headers: {
                 Authorization: `Bearer: ${token}`
             }
@@ -35,7 +35,7 @@ function MMR({userId, mmrShow, setMMRShow, onClose}) {
                 mmr_standard: updatedMMR.mmr_standard
             }
             //put request to update user table with newest MMR 
-            return axios.put('http://localhost:8080/users/mmr', mmrToUpdate, {
+            return axios.put(`${API_KEY}/users/mmr`, mmrToUpdate, {
                 headers: {
                     Authorization: `Bearer: ${token}`
                 }
