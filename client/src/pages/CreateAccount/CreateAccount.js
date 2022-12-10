@@ -17,7 +17,6 @@ const newAccountSchema = Yup.object().shape({
 
 function CreateAccount({isLoggedIn}) {
     const handleSubmit = (values) => {
-        console.log(values)
         const newUser = {
             user_name: values.username,
             user_email: values.email,

@@ -21,6 +21,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  //handle login on submit of login form
   const handleLogin = (values) => {
     const user = {
         user_email: values.email,
@@ -43,6 +44,7 @@ function App() {
   
   }
 
+  //if user refresh page, check if the user still has token from session and set logged in and user.
   useEffect(() => {
     const token = sessionStorage.getItem('token')
     if(!token) {
@@ -59,7 +61,6 @@ function App() {
     }
   }, [])
 
-  console.log(isLoggedIn)
 
   return (
     <div className="App">

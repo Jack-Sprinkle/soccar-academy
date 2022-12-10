@@ -1,16 +1,12 @@
 import './MMRTracker.scss';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { date } from 'yup';
 
-function MMRTracker({userId, mmr, initialMMRDate}) {
+function MMRTracker({userId}) {
 
     const [mmrData, setMMRData] = useState(null)
     const token = sessionStorage.getItem('token')
-    const initialMMRInfo = {
-        mmr_standard: mmr,
-        updated_at: initialMMRDate
-    }
+
     useEffect(() => {
         axios.get(`http://localhost:8080/mmr/${userId}`, {
             headers: {
@@ -19,7 +15,6 @@ function MMRTracker({userId, mmr, initialMMRDate}) {
         })
         .then(response => {
             setMMRData(response.data)
-            setMMRData(mmrData => [...mmrData, initialMMRInfo])
         }).catch(error => {
             console.log(error)
         })
