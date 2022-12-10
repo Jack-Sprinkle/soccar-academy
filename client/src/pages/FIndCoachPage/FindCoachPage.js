@@ -54,6 +54,14 @@ function FindCoachPage({user, isLoggedIn}) {
         )
     }
 
+    if(filteredCoaches.length === 0) {
+        return (
+            <div className='loading'>
+                <p className='loading__text'>There are no coaches at this time</p>
+            </div>
+        )
+    }
+
     return (
         <div className='coach__list'>
             {filteredCoaches.map((coach) => {

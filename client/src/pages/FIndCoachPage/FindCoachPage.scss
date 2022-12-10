@@ -10,3 +10,18 @@
     gap: 1rem;
     padding: 1rem 0 2rem 0;
 }
+
+.loading {
+    @include colors.background;
+    height: 100vh;
+    padding-top: 1rem;
+
+    &__text {
+        font-size: .875rem;
+        line-height: 1.125rem;
+        color: colors.$white;
+        text-align: center;
+        font-weight: 500;
+        margin: 0;
+    }
+}

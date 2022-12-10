@@ -49,9 +49,17 @@ exports.register = async(req, resp) => {
         user_coach
     }
 
+    //create initial MMR
+    const initialMMR = {
+        id: uuid(),
+        user_id: newUser.id,
+        mmr_standard: newUser.mmr_standard
+    }
+
     //Insert new user into the DB
     try {
         await knex('users').insert(newUser);
+        await knex('mmr').insert(initialMMR);
         resp.status(201).send("Registered successfully")
     } catch (error) {
         resp.status(400).send("Failed to register")
