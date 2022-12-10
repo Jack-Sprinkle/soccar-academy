@@ -112,3 +112,16 @@
         color: colors.$error;
     }
 }
+
+.response__message {
+    background-image: url('../../assets/icons/error-24px.svg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: left;
+    background-size: .75rem;
+    margin: 0;
+    padding-left: 1rem;
+    font-size: .75rem;
+    line-height: 1rem;
+    color: colors.$error;
+}

@@ -20,6 +20,7 @@ function App() {
   
   const [user, setUser] = useState(null)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('')
 
   //handle login on submit of login form
   const handleLogin = (values) => {
@@ -39,7 +40,7 @@ function App() {
         }).then(response => {
           setUser(response.data)
         }).catch(error => {
-          console.log(error)
+          setErrorMessage(error.response.data)
         })
   
   }
@@ -65,7 +66,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header handleLogin={handleLogin} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
+        <Header handleLogin={handleLogin} setIsLoggedIn={setIsLoggedIn} setUser={setUser} errorMessage={errorMessage}/>
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/create-account' element={<CreateAccount isLoggedIn={isLoggedIn} />}></Route>
