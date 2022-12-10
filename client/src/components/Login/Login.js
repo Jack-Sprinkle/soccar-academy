@@ -10,7 +10,7 @@ const LoginSchema = Yup.object().shape({
 });
 
 
-function Login({setLoginShow, loginShow, onClose}) {
+function Login({setLoginShow, loginShow, onClose, setIsLoggedIn}) {
     const navigate = useNavigate();
     
     if (!loginShow) {
@@ -26,6 +26,7 @@ function Login({setLoginShow, loginShow, onClose}) {
         axios.post('http://localhost:8080/users/login', user)
         .then(response => {
             sessionStorage.setItem('token', response.data.token);
+            setIsLoggedIn(true);
             navigate(-1)
             setLoginShow(false)
         }).catch(error => {

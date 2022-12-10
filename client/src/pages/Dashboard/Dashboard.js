@@ -5,29 +5,18 @@ import UserProfile from '../../components/UserProfile/UserProfile';
 import MMRTracker from '../../components/MMRTracker/MMRTracker';
 import SkillTracker from '../../components/SkillTracker/SkillTracker';
 
-function Dashboard() {
-    const [user, setUser] = useState(null);
+function Dashboard({user}) {
     const [failedAuth, setFailedAuth] = useState(null);
-  
+    
+    //check on mount if user has a token.
     useEffect(() => {
-      const token = sessionStorage.getItem('token')
+        const token = sessionStorage.getItem('token')
   
-      if(!token) {
-        return setFailedAuth(true);
-      }
-  
-      axios.get('http://localhost:8080/users/current', {
-        headers: {
-          Authorization: `Bearer: ${token}`
+        if(!token) {
+            return setFailedAuth(true);
         }
-      })
-        .then(response => {
-          setUser(response.data)
-        })
-        .catch(error => {
-            console.log(error)
-        })
     }, [])
+
 
     if(failedAuth) {
         return (

@@ -10,7 +10,7 @@ const commentSchema = Yup.object().shape({
     comment: Yup.string().min(2, 'Too short!').required('This field is required')
 })
 
-function ThreadPage() {
+function ThreadPage({user}) {
     //Grab category and post id from params
     const {category, postId} = useParams();
 
@@ -38,38 +38,30 @@ function ThreadPage() {
     //handle submit of comment
     const handleSubmit = async(values) => {
         const token = sessionStorage.getItem('token')
+
+        const newComment = {
+            user_id: user.id,
+            content: values.comment
+        }
         axios
-            //Get current user
-            .get('http://localhost:8080/users/current', {
-                headers: {
-                    Authorization: `Bearer: ${token}`
-                }
-            })
-            .then(response => {
-                //Create new comment
-                const userId = response.data.id
-                const newComment = {
-                    user_id: userId,
-                    content: values.comment
-                }
-                //Post comment to server
-                return axios.post(`http://localhost:8080/comments/${postId}`, newComment, {
+            .post(`http://localhost:8080/comments/${postId}`, newComment, {
                     headers: {
                         Authorization: `Bearer: ${token}`
                     }
                 })
-            })
-            .then(response => {
-                //Get comments to re-render
-                return axios.get(`http://localhost:8080/comments/${postId}`)
-            })
-            //Set comments to new comments
-            .then(response => {
-                setComments(response.data)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+                .then(response => {
+                    console.log(response)
+                    //Get comments to re-render
+                    return axios.get(`http://localhost:8080/comments/${postId}`)
+                })
+                //Set comments to new comments
+                .then(response => {
+                    setComments(response.data)
+                    values = ''
+                })
+                .catch(error => {
+                    console.log(error)
+                })
     }
 
 
@@ -123,6 +115,7 @@ function ThreadPage() {
                     validationSchema={commentSchema}
                     onSubmit={values => {
                         handleSubmit(values)
+                        values.comment = ''
                     }}
                 >
                     {({errors, touched}) => (

@@ -3,10 +3,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios'
 import CoachCard from '../../components/CoachCard/CoachCard';
 
-function FindCoachPage() {
-
-    //initialize user state
-    const [user, setUser] = useState(null);
+function FindCoachPage({user}) {
     
     //initialize failed authentication state
     const [failedAuth, setFailedAuth] = useState(null);
@@ -23,27 +20,16 @@ function FindCoachPage() {
         return setFailedAuth(true);
       }
       
-      //get user info and list of coaches.
-      axios
-        .get('http://localhost:8080/users/current', {
+        axios.get('http://localhost:8080/coaches', {
             headers: {
                 Authorization: `Bearer: ${token}`
             }
-        })
-        .then(response => {
-          setUser(response.data)
-          return axios.get('http://localhost:8080/coaches', {
-            headers: {
-                Authorization: `Bearer: ${token}`
-            }
-          })
+            })
             .then(response => {
                 setCoaches(response.data)
+            }).catch(error => {
+                console.log(error)
             })
-        })
-        .catch(error => {
-            console.log(error)
-        })
     }, [])
 
 
@@ -55,15 +41,6 @@ function FindCoachPage() {
         return (
             <div className='failed__auth'>
                 <p className='failed__auth-text'>You must be logged in to see this page.</p>
-            </div>
-        )
-    }
-
-    //if there are no users on mount. issue with server, etc. early return not to break site.
-    if(!user) {
-        return (
-            <div className='loading'>
-                <p className='loading__text'>Currently retrieving your dashboard...</p>
             </div>
         )
     }

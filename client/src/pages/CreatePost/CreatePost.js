@@ -10,12 +10,12 @@ const newPostSchema = Yup.object().shape({
     content: Yup.string().min(3, 'Too Short!').required('This field is required!')
 })
 
-function CreatePost() {
+function CreatePost({user}) {
     const navigate = useNavigate();
     const {category} = useParams()
-    const [user, setUser] = useState(null);
     const [failedAuth, setFailedAuth] = useState(null);
-  
+    
+    //check if user has token on mount, if not early return.
     useEffect(() => {
       const token = sessionStorage.getItem('token')
   
@@ -23,17 +23,6 @@ function CreatePost() {
         return setFailedAuth(true);
       }
   
-      axios.get('http://localhost:8080/users/current', {
-        headers: {
-          Authorization: `Bearer: ${token}`
-        }
-      })
-        .then(response => {
-          setUser(response.data)
-        })
-        .catch(error => {
-            console.log(error)
-        })
     }, [])
 
     if(failedAuth) {
