@@ -205,13 +205,16 @@
 
 .logged-in {
     display: flex;
-    text-align: center;
 
     &__text {
+        text-align: center;
         color: colors.$white;
         font-size: .875rem;
         line-height: 1.125rem;
-        text-align: center;
         width: 100%;
+
+        @include responsive.tablet {
+            width: 75%;
+        }
     }
 }
