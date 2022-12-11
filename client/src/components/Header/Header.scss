@@ -15,6 +15,14 @@
         background-color: black;
         opacity: 55%;
         height: 12rem;
+
+        @include responsive.tablet {
+            height: 17rem;
+        }
+
+        @include responsive.desktop {
+            height: 20rem;
+        }
     }
 
     &__logo {
@@ -24,6 +32,10 @@
 
         @include responsive.tablet {
             height: 10rem;
+        }
+
+        @include responsive.desktop {
+            height: 15rem;
         }
     }
 

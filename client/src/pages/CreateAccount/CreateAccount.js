@@ -145,7 +145,7 @@ function CreateAccount({isLoggedIn}) {
                                         No
                                         <Field type='radio' className={`new__radio ${errors.password && touched.password ? 'new__radio--invalid' : ''}`} name='coach' value='no'/>
                                     </label>
-                                    <p className='new__radio-text'>*Selecting yes will allow other user to see your coach card under the "Find Coach" page. This will display your: Username, Epic Id, MMR, and Discord for users to contact you.</p>
+                                    <p className='new__radio-text'>*Selecting yes will allow other user to see your coach card under the "Find Coach" page. This will display your: Username, MMR, and Discord for users to contact you.</p>
                                 </div>
                                 {errors.password && touched.password ? (
                                 <div className='new__errors'>{errors.password}</div>

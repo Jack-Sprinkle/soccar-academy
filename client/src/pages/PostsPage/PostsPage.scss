@@ -65,6 +65,11 @@
         @include responsive.tablet {
             width: 75%;
         }
+
+        @include responsive.desktop {
+            width: 65%;
+            margin-left: 2rem;
+        }
     }
 }
 

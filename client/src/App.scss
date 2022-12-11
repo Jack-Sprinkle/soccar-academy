@@ -20,8 +20,12 @@
         color: colors.$white;
         margin: 0;
         padding-top: 1.5rem;
-        width: 70%;
         text-align: center;
+        margin: 0 auto;
+
+        @include responsive.tablet {
+            width: 70%;
+        }
     }
 }
 
