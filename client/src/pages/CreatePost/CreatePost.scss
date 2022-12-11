@@ -3,7 +3,6 @@
 @use '../../styles/responsive';
 
 .new-post {
-    @include colors.background;
     height: 100vh;
     display: flex;
     flex-direction: column;

@@ -3,11 +3,20 @@ import logo from '../../assets/images/Group.svg';
 import Menu from '../Menu/Menu';
 import {useState} from 'react';
 import Login from '../Login/Login';
+import { useNavigate } from 'react-router-dom';
 
 function Header({handleLogin, setIsLoggedIn, isLoggedIn, setUser, user, errorMessage}) {
 
     const [show, setShow] = useState(false);
-    const [loginShow, setLoginShow] = useState(false)
+    const [loginShow, setLoginShow] = useState(false);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        sessionStorage.removeItem('token')
+        setUser(null);
+        setIsLoggedIn(false);
+        navigate('/')
+    }
     
     return (
         <>
@@ -27,6 +36,7 @@ function Header({handleLogin, setIsLoggedIn, isLoggedIn, setUser, user, errorMes
                 />
                 {isLoggedIn ? null : (<p onClick={() => setLoginShow(true)}className='header__link'>Log in</p>)}
                 {isLoggedIn ? (<p className='user__name--logged-in'>{user?.user_name}</p>) : null}
+                {isLoggedIn ? (<p onClick={handleLogout}className='header__logout--tablet'>Log out</p>) : null}
                 <Login
                     handleLogin={handleLogin}
                     isLoggedIn={isLoggedIn}

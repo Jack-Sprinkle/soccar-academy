@@ -10,7 +10,7 @@ $error: #C94515;
 
 @mixin background {
     background: rgb(6,45,152);
-    background: linear-gradient(180deg, rgba(6,45,152,1) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(6,45,152,1) 0%, rgba(0,0,0,1) 100%) no-repeat;
 }
 
 @mixin boxshadow {

@@ -5,9 +5,7 @@
 .thread {
     display: flex;
     flex-direction: column;
-    padding: 1rem 1rem 2rem 1rem;
-    gap: 1rem;
-    @include colors.background;
+    height: 100vh;
 
     @include responsive.tablet {
         flex-direction: row;
@@ -16,7 +14,9 @@
 
     &__container--tablet {
         @include responsive.tablet {
-            width: 70%;
+            margin: 0 1rem 1rem 0;
+            padding-left: 1rem;
+            width: 72%;
             padding-top: 1rem;
         }
 

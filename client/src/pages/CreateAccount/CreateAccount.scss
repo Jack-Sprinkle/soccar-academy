@@ -5,7 +5,6 @@
 .new {
     display: flex;
     flex-direction: column;
-    @include colors.background;
     padding-bottom: 2rem;
 
     @include responsive.tablet {
@@ -201,21 +200,18 @@
 .new-account--tablet {
     @include responsive.tablet {
         display: flex;
-        @include colors.background;
-
     }
 }
 
 .logged-in {
-    height: 100vh;
-    @include colors.background;
     display: flex;
+    text-align: center;
 
     &__text {
         color: colors.$white;
         font-size: .875rem;
         line-height: 1.125rem;
         text-align: center;
-        width: 75%;
+        width: 100%;
     }
 }

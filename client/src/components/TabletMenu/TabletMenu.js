@@ -13,7 +13,6 @@ function TabletMenu() {
                 <Link to='/'><li className='tablet__list-item'>Forums</li></Link>
                 <Link to='/about'><li className='tablet__list-item'>About</li></Link>
                 <Link to='/support'><li className='tablet__list-item'>Support</li></Link>
-                <li className='tablet__list-item'>Log Out</li>
             </ul> 
         </div>
     );

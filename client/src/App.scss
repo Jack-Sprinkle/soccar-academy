@@ -12,7 +12,6 @@
 }
 
 .failed__auth {
-    @include colors.background;
     height: 100vh;
     display: flex;
 
@@ -30,7 +29,6 @@
 }
 
 .loading {
-    @include colors.background;
     height: 100vh;
 
     &__text {

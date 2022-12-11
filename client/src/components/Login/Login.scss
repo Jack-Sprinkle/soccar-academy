@@ -19,7 +19,8 @@
     gap: 1rem;
 
     @include responsive.tablet {
-        top: .65rem;
+        top: .7rem;
+        left: 1rem;
         width: 20rem;
     }
 

@@ -55,7 +55,6 @@
 
 .post__container {
     padding-bottom: 2rem;
-    @include colors.background;
 
     @include responsive.tablet {
         display: flex;
