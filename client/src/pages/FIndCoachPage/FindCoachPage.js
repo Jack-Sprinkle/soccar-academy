@@ -72,6 +72,7 @@ function FindCoachPage({user, isLoggedIn}) {
             <TabletMenu/>
             <div className='coach__list'>
                 <h2 className='coach__list-heading'>Find a Coach</h2>
+                <p className='coach__list-info'>Find a coach you like and message them through Discord to get started!</p>
                 {filteredCoaches.map((coach) => {
                     const {user_name, discord_name, mmr_standard, user_bio, id} = coach
                     return (

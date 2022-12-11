@@ -23,6 +23,19 @@
         }
     }
 
+    &-info {
+        text-align: center;
+        color: colors.$white;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
+
+        @include responsive.tablet {
+            font-size: 1rem;
+            line-height: 1.25rem;
+            width: 50%;
+        }
+    }
+
     @include responsive.tablet {
         width: 75%;
     }

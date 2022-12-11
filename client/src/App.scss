@@ -29,16 +29,19 @@
 }
 
 .loading {
-    height: 100vh;
+    display: flex;
 
     &__text {
         font-size: .875rem;
         line-height: 1.125rem;
         padding-top: 1.5rem;
         color: colors.$white;
-        text-align: center;
         font-weight: 500;
-        margin: 0;
+        width: 100%;
+
+        @include responsive.tablet {
+            width: 75%;
+        }
     }
 }
 
