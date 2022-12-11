@@ -2,7 +2,6 @@ import './Dashboard.scss';
 import UserProfile from '../../components/UserProfile/UserProfile';
 import MMRTracker from '../../components/MMRTracker/MMRTracker';
 import SkillTracker from '../../components/SkillTracker/SkillTracker';
-import ThreadPage from '../ThreadPage/ThreadPage';
 import TabletMenu from '../../components/TabletMenu/TabletMenu';
 
 function Dashboard({user, isLoggedIn}) {
