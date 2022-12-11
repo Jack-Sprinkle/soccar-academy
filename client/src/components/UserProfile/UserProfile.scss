@@ -15,8 +15,8 @@
 
     &__heading {
         color: colors.$white;
-        font-size: 1rem;
-        line-height: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
         font-weight: 400;
         margin: 0 auto;
         text-decoration: underline;
@@ -34,8 +34,8 @@
 
         &-text {
             color: colors.$white;
-            font-size: .75rem;
-            line-height: 1.125rem;
+            font-size: .8125rem;
+            line-height: 1.0625rem;
 
         }
     }
@@ -47,8 +47,8 @@
         border: 1px solid colors.$orange;
         width: 50%;
         height: 2rem;
-        font-size: .75rem;
-        line-height: 1rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
         font-weight: 700;
 
         &:hover {

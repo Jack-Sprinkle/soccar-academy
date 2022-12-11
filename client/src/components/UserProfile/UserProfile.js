@@ -14,8 +14,8 @@ function UserProfile({userId, userName, discord, epic, mmr, bio}) {
                     <p className='profile__info-text'>Discord: {discord}</p>
                     <p className='profile__info-text'>Epic Id: {epic}</p>
                     <p className='profile__info-text'>Standard MMR: {mmr}</p>
+                    <p className='profile__info-text'>Your Bio: {bio}</p>
                 </div>
-                <p className='profile__info-text'>Your Bio: {bio}</p>
             </div>
             <button onClick={() => setMMRShow(true)} className='profile__update'>Update MMR</button>
             <UpdateMMR

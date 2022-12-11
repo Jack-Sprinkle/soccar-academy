@@ -18,8 +18,8 @@
         color: colors.$white;
         font-weight: 500;
         text-align: center;
-        font-size: 1rem;
-        line-height: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
         text-decoration: underline;
     }
 
@@ -27,6 +27,7 @@
         align-self: center;
         border-radius: .25rem;
         width: 80%;
+        height: 1.25rem;
         border: 1px solid colors.$light-blue;
 
         &:focus {
@@ -42,8 +43,8 @@
         border: 1px solid colors.$orange;
         width: 5rem;
         height: 1.75rem;
-        font-size: .75rem;
-        line-height: 1rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
         font-weight: 700;
         align-self: center;
 
@@ -76,8 +77,8 @@
 
         &-item {
             color: colors.$white;
-            font-size: .75rem;
-            line-height: 1rem;
+            font-size: .8125rem;
+            line-height: 1.0625rem;
         }
     }
 
@@ -88,8 +89,8 @@
         border: 1px solid colors.$orange;
         width: 5rem;
         height: 1.75rem;
-        font-size: .75rem;
-        line-height: 1rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
         font-weight: 700;
         align-self: center;
 

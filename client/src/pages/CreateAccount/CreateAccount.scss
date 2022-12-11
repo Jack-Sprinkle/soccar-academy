@@ -12,8 +12,8 @@
         text-align: center;
         text-decoration: underline;
         color: colors.$white;
-        font-size: 1rem;
-        line-height: 1.25rem;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
         font-weight: 500;
     }
 
@@ -32,8 +32,8 @@
     &__label {
         display: flex;
         color: colors.$white;
-        font-size: .75rem;
-        line-height: 1rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
         justify-content: space-between;
         gap: .5rem;
     }
@@ -41,6 +41,7 @@
     &__input {
         margin-left: .5rem;
         border-radius: .25rem;
+        height: 1.25rem;
         width: 60%;
         border: 1px solid colors.$light-blue;
 
@@ -80,8 +81,8 @@
 
         &-heading {
             color: colors.$white;
-            font-size: .875rem;
-            line-height: 1.125rem;
+            font-size: 1.25rem;
+            line-height: 1.5rem;
             font-weight: 500;
             text-align: center;
             margin: 0;
@@ -89,8 +90,8 @@
 
         &-button {
             color: colors.$white;
-            font-size: .75rem;
-            line-height: 1rem;
+            font-size: .8125rem;
+            line-height: 1.0625rem;
             display: flex;
             gap: 1rem;
             justify-content: center;
@@ -99,8 +100,8 @@
         &-text {
             text-align: center;
             color: colors.$white;
-            font-size: .75rem;
-            line-height: 1rem;
+            font-size: .8125rem;
+            line-height: 1.0625rem;
         }
     }
 
@@ -122,9 +123,9 @@
         background-color: colors.$orange;
         border: 1px solid colors.$orange;
         width: 10rem;
-        height: 1.75rem;
-        font-size: .75rem;
-        line-height: 1rem;
+        height: 2rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
         font-weight: 700;
         align-self: center;
 

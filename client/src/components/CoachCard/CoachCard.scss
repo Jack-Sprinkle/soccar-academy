@@ -14,9 +14,11 @@
     &__heading {
         color: colors.$white;
         font-weight: 500;
-        font-size: 1rem;
-        line-height: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
         text-align: center;
+        margin: 0;
+        margin-bottom: 1rem;
     }
 
     &__info {
@@ -27,8 +29,8 @@
 
         &-text {
             color: colors.$white;
-            font-size: .75rem;
-            line-height: 1rem;
+            font-size: .8125rem;
+            line-height: 1.0625rem;
             margin: 0;
         }
     }

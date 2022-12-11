@@ -1,0 +1,40 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
+.tablet {
+    display: none;
+
+    @include responsive.tablet {
+        display: flex;
+        flex-direction: column;
+        background-color: colors.$off-white;
+        border-top-right-radius: .25rem;
+        border-bottom-right-radius: .25rem;
+        width: 20%;
+        height: 20rem;
+        padding: 1rem;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        padding: 1rem 0 .5rem 0;
+        gap: .75rem;
+
+        &-item {
+            font-size: .75rem;
+            line-height: 1.125rem;
+            font-weight: 400;
+            cursor: pointer;
+
+            &:hover {
+                border-bottom: 2px solid colors.$light-blue;
+                margin-bottom: -2px;
+            }
+        }
+    }
+}

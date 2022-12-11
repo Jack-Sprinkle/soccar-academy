@@ -45,14 +45,22 @@
         width: 2rem;
         height: 2rem;
         cursor: pointer;
+
+        @include responsive.tablet {
+            display: none;
+        }
     }
 
     &__link {
         color: colors.$white;
-        font-size: .875rem;
-        line-height: 1.125rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
         margin: 0;
         cursor: pointer;
+
+        @include responsive.tablet {
+            margin-left: auto;
+        }
     }
 }
 

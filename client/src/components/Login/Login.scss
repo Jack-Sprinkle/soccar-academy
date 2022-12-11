@@ -47,8 +47,8 @@
     }
 
     &__label {
-        font-size: .75rem;
-        line-height: 1.125rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
         font-weight: 500;
         display: flex;
         align-items: center;
@@ -59,6 +59,7 @@
         margin-left: .5rem;
         border-radius: .25rem;
         width: 70%;
+        height: 1.25rem;
         border: 1px solid colors.$light-blue;
 
         &:focus {
@@ -90,8 +91,8 @@
         border: 1px solid colors.$orange;
         width: 5rem;
         height: 1.75rem;
-        font-size: .75rem;
-        line-height: 1rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
         font-weight: 700;
         align-self: center;
 

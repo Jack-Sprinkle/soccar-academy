@@ -5,4 +5,8 @@
 .homepage {
     @include colors.background;
     height: 100vh;
+
+    @include responsive.tablet {
+        display: flex;
+    }
 }

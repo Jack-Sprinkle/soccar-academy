@@ -14,14 +14,14 @@
         align-items: center;
         border-radius: .25rem;
         padding: .5rem 1rem;
-        gap: 2rem;
+        gap: 1rem;
         background-color: colors.$dark-blue;
         @include colors.boxshadow;
     }
 
     &__heading {
-        font-size: .875rem;
-        line-height: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
         font-weight: 500;
         color: colors.$white;
     }
