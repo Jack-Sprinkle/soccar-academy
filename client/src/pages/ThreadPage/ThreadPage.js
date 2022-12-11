@@ -1,5 +1,5 @@
 import './ThreadPage.scss';
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import Comment from '../../components/Comment/Comment';
@@ -14,6 +14,7 @@ const commentSchema = Yup.object().shape({
 function ThreadPage({user}) {
     //Grab category and post id from params
     const {category, postId} = useParams();
+    const navigate = useNavigate()
 
     const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -104,7 +105,10 @@ function ThreadPage({user}) {
             <TabletMenu />
             <div className='thread__container--tablet'>
                 <div className='thread__info'>
-                    <h2 className='thread__title'>{post.title}</h2>
+                    <div className='thread__info-container'>
+                        <h2 className='thread__title'>{post.title}</h2>
+                        <button className='thread__back' onClick={() => navigate(-1)}>Back to posts</button>
+                    </div>
                     <div className='thread__content'>
                         <div className='thread__content-container'>
                             <p>{post.user_name}</p>
