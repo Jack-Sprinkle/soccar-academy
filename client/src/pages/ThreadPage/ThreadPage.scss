@@ -8,7 +8,18 @@
     padding: 1rem 1rem 2rem 1rem;
     gap: 1rem;
     @include colors.background;
-    height: 100vh;
+
+    @include responsive.tablet {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    &__container--tablet {
+        @include responsive.tablet {
+            width: 70%;
+            padding-top: 1rem;
+        }
+    }
 
     &__title {
         color: colors.$white;
@@ -16,6 +27,11 @@
         font-size: 1.25rem;
         line-height: 1.5rem;
         font-weight: 500;
+
+        @include responsive.tablet {
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+        }
     }
 
     &__reply {
@@ -49,6 +65,11 @@
         &-container {
             display: flex;
             justify-content: space-between;
+        }
+
+        @include responsive.tablet {
+            font-size: 1rem;
+            line-height: 1.25rem;
         }
     }
 }

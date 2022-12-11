@@ -19,6 +19,11 @@
         text-align: center;
         margin: 0;
         margin-bottom: 1rem;
+
+        @include responsive.tablet {
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+        }
     }
 
     &__info {
@@ -27,11 +32,17 @@
         width: 75%;
         gap: 1rem;
 
+
         &-text {
             color: colors.$white;
             font-size: .8125rem;
             line-height: 1.0625rem;
             margin: 0;
+
+            @include responsive.tablet {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
         }
     }
 

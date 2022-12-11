@@ -9,6 +9,11 @@
     line-height: 1.75rem;
     font-weight: 500;
     color: colors.$white;
+
+    @include responsive.tablet {
+        font-size: 1.75rem;
+        line-height: 2rem;
+    }
 }
 
 .post__new-button {
@@ -51,4 +56,16 @@
 .post__container {
     padding-bottom: 2rem;
     @include colors.background;
+
+    @include responsive.tablet {
+        display: flex;
+    }
+
+    &--tablet {
+        @include responsive.tablet {
+            width: 75%;
+        }
+    }
 }
+
+

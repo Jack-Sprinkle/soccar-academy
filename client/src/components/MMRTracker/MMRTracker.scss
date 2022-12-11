@@ -6,6 +6,7 @@
     display: flex;
     gap: 1rem;
     align-content: center;
+    
 
     &__container {
         background-color: colors.$dark-blue;
@@ -13,6 +14,7 @@
         width: 86%;
         margin: 1rem;
         overflow: scroll;
+        @include colors.boxshadow;
     }
 
     &__column {
@@ -29,6 +31,11 @@
         text-align: center;
         color: colors.$white;
         text-decoration: underline;
+
+        @include responsive.tablet {
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+        }
         
     }
 
@@ -36,5 +43,10 @@
         color: colors.$white;
         font-size: .8125rem;
         line-height: 1.0625rem;
+
+        @include responsive.tablet {
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
     }
 }

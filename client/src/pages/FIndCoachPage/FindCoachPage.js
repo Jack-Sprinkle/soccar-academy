@@ -2,6 +2,7 @@ import './FindCoachPage.scss';
 import {useEffect, useState} from 'react';
 import axios from 'axios'
 import CoachCard from '../../components/CoachCard/CoachCard';
+import TabletMenu from '../../components/TabletMenu/TabletMenu';
 
 function FindCoachPage({user, isLoggedIn}) {
 
@@ -33,6 +34,7 @@ function FindCoachPage({user, isLoggedIn}) {
     if(!isLoggedIn) {
         return (
             <div className='failed__auth'>
+                <TabletMenu />
                 <p className='failed__auth-text'>You must be logged in to see this page.</p>
             </div>
         )
@@ -41,6 +43,7 @@ function FindCoachPage({user, isLoggedIn}) {
     if(!user) {
         return (
             <div className='failed__auth'>
+                <TabletMenu />
                 <p className='failed__auth-text'>Loading...</p>
             </div>
         )
@@ -50,6 +53,7 @@ function FindCoachPage({user, isLoggedIn}) {
     if(!coaches) {
         return (
             <div className='loading'>
+                <TabletMenu />
                 <p className='loading__text'>There are no coaches at this time</p>
             </div>
         )
@@ -64,21 +68,24 @@ function FindCoachPage({user, isLoggedIn}) {
     }
 
     return (
-        <div className='coach__list'>
-            <h2 className='coach__list-heading'>Find a Coach</h2>
-            {filteredCoaches.map((coach) => {
-                const {user_name, discord_name, mmr_standard, user_bio, id} = coach
-                return (
-                    <CoachCard
-                        key={id}
-                        id={id}
-                        userName={user_name}
-                        discordName={discord_name}
-                        mmr={mmr_standard}
-                        bio={user_bio}
-                    />
-                )
-            })}
+        <div className='coach__list--tablet'>
+            <TabletMenu/>
+            <div className='coach__list'>
+                <h2 className='coach__list-heading'>Find a Coach</h2>
+                {filteredCoaches.map((coach) => {
+                    const {user_name, discord_name, mmr_standard, user_bio, id} = coach
+                    return (
+                        <CoachCard
+                            key={id}
+                            id={id}
+                            userName={user_name}
+                            discordName={discord_name}
+                            mmr={mmr_standard}
+                            bio={user_bio}
+                        />
+                    )
+                })}
+            </div>
         </div>
     );
 };

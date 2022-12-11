@@ -9,9 +9,14 @@
     padding: 1.5rem 1rem;
     gap: 1rem;
 
+    @include responsive.tablet {
+        width: 75%;
+    }
+
     &__card {
         display: flex;
         align-items: center;
+        justify-content: center;
         border-radius: .25rem;
         padding: .5rem 1rem;
         gap: 1rem;
@@ -24,6 +29,11 @@
         line-height: 1.5rem;
         font-weight: 500;
         color: colors.$white;
+
+        @include responsive.tablet {
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+        }
     }
 
     &__icon {

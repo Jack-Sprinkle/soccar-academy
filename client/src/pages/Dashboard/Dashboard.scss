@@ -7,4 +7,15 @@
     flex-direction: column;
     align-items: center;
     @include colors.background;
+
+    @include responsive.tablet {
+        width: 75%;
+    }
+
+    &--tablet {
+        @include responsive.tablet {
+            display: flex;
+            @include colors.background;
+        }
+    }
 }

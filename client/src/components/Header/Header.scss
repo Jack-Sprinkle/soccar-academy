@@ -21,6 +21,10 @@
         position: absolute;
         top: 1rem;
         left: 2.5rem;
+
+        @include responsive.tablet {
+            height: 10rem;
+        }
     }
 
     &__nav {
@@ -60,13 +64,21 @@
 
         @include responsive.tablet {
             margin-left: auto;
+            font-size: 1rem;
+            line-height: 1.25rem;
         }
     }
 }
 
 .user__name--logged-in {
         margin: 0;
+        margin-left: auto;
         color: colors.$white;
         font-size: .875rem;
         line-height: 1.125rem;
+
+        @include responsive.tablet {
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
 }

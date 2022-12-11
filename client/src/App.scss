@@ -14,15 +14,29 @@
 .failed__auth {
     @include colors.background;
     height: 100vh;
-    padding: 1rem;
     display: flex;
-    justify-content: center;
 
     &-text {
         color: colors.$white;
         margin: 0;
+        padding-top: 1.5rem;
         width: 70%;
         text-align: center;
+    }
+}
+
+.loading {
+    @include colors.background;
+    height: 100vh;
+
+    &__text {
+        font-size: .875rem;
+        line-height: 1.125rem;
+        padding-top: 1.5rem;
+        color: colors.$white;
+        text-align: center;
+        font-weight: 500;
+        margin: 0;
     }
 }
 

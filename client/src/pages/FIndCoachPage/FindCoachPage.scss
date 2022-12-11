@@ -16,17 +16,34 @@
         font-weight: 500;
         margin: 0;
         color: colors.$white;
+
+        @include responsive.tablet {
+            font-size: 1.75rem;
+            line-height: 2rem;
+        }
+    }
+
+    @include responsive.tablet {
+        width: 75%;
+    }
+
+    &--tablet {
+        @include responsive.tablet {
+            @include colors.background;
+            display: flex;
+            flex-direction: row
+        }
     }
 }
 
 .loading {
     @include colors.background;
     height: 100vh;
-    padding-top: 1rem;
 
     &__text {
         font-size: .875rem;
         line-height: 1.125rem;
+        padding-top: 1.5rem;
         color: colors.$white;
         text-align: center;
         font-weight: 500;

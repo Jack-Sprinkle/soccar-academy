@@ -8,6 +8,11 @@
     @include colors.background;
     padding-bottom: 2rem;
 
+    @include responsive.tablet {
+        width: 70%;
+        margin-left: 1rem;
+    }
+
     &__heading {
         text-align: center;
         text-decoration: underline;
@@ -15,6 +20,11 @@
         font-size: 1.5rem;
         line-height: 1.75rem;
         font-weight: 500;
+
+        @include responsive.tablet {
+            font-size: 1.75rem;
+            line-height: 2rem;
+        }
     }
 
     &__form {
@@ -36,6 +46,11 @@
         line-height: 1.0625rem;
         justify-content: space-between;
         gap: .5rem;
+
+        @include responsive.tablet {
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
     }
 
     &__input {
@@ -71,6 +86,10 @@
                 border: 1px solid colors.$error;
             }
         }
+
+        @include responsive.tablet {
+            height: 1.5rem;
+        }
     }
 
     &__radio {
@@ -86,6 +105,11 @@
             font-weight: 500;
             text-align: center;
             margin: 0;
+
+            @include responsive.tablet {
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+            }
         }
 
         &-button {
@@ -95,6 +119,11 @@
             display: flex;
             gap: 1rem;
             justify-content: center;
+
+            @include responsive.tablet {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
         }
 
         &-text {
@@ -102,6 +131,11 @@
             color: colors.$white;
             font-size: .8125rem;
             line-height: 1.0625rem;
+
+            @include responsive.tablet {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
         }
     }
 
@@ -157,4 +191,23 @@
     line-height: 1rem;
     font-weight: 500;
     align-self: center;
+}
+
+.new-account--tablet {
+    @include responsive.tablet {
+        display: flex;
+        @include colors.background;
+
+    }
+}
+
+.logged-in {
+    height: 100vh;
+    @include colors.background;
+
+    &__text {
+        color: colors.$white;
+        font-size: .875rem;
+        line-height: 1.125rem;
+    }
 }

@@ -5,6 +5,7 @@ import axios from 'axios';
 import Comment from '../../components/Comment/Comment';
 import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
+import TabletMenu from '../../components/TabletMenu/TabletMenu';
 
 const commentSchema = Yup.object().shape({
     comment: Yup.string().min(2, 'Too short!').required('This field is required')
@@ -100,55 +101,57 @@ function ThreadPage({user}) {
 
     return (
         <div className='thread'>
-            <div className='thread__info'>
-                <h2 className='thread__title'>{post.title}</h2>
-                <div className='thread__content'>
-                    <div className='thread__content-container'>
-                        <p>{post.user_name}</p>
-                        <p>{post.created_on}</p>
+            <TabletMenu />
+            <div className='thread__container--tablet'>
+                <div className='thread__info'>
+                    <h2 className='thread__title'>{post.title}</h2>
+                    <div className='thread__content'>
+                        <div className='thread__content-container'>
+                            <p>{post.user_name}</p>
+                            <p>{post.created_on}</p>
+                        </div>
+                        <p>{post.content}</p>
                     </div>
-                    <p>{post.content}</p>
-                </div>
-                <Formik
-                    initialValues={{
-                        comment: ''
-                    }}
+                    <Formik
+                        initialValues={{
+                            comment: ''
+                        }}
 
-                    validationSchema={commentSchema}
-                    onSubmit={values => {
-                        handleSubmit(values)
-                        values.comment = ''
-                    }}
-                >
-                    {({errors, touched}) => (
-                        <Form className='comment__form'>
-                            <div className='comment__form-input-container'>
-                                <Field as='textarea' placeholder='Leave a comment...' className={`comment__form-input ${errors.comment && touched.comment ? 'comment__form-input--invalid' : ''}`} name='comment'></Field>
-                                {errors.comment && touched.comment ? (
-                                    <div className='comment__form-errors'>{errors.comment}</div>
-                                ) : null}
-                            </div>
-                            <button className='comment__form-submit' type='submit'>Comment</button>
-                            {error ? (<p className='error__message'>You must be logged in to comment</p>) : null}
-                        </Form>
-                    )}
-                </Formik>
-                
+                        validationSchema={commentSchema}
+                        onSubmit={values => {
+                            handleSubmit(values)
+                            values.comment = ''
+                        }}
+                    >
+                        {({errors, touched}) => (
+                            <Form className='comment__form'>
+                                <div className='comment__form-input-container'>
+                                    <Field as='textarea' placeholder='Leave a comment...' className={`comment__form-input ${errors.comment && touched.comment ? 'comment__form-input--invalid' : ''}`} name='comment'></Field>
+                                    {errors.comment && touched.comment ? (
+                                        <div className='comment__form-errors'>{errors.comment}</div>
+                                    ) : null}
+                                </div>
+                                <button className='comment__form-submit' type='submit'>Comment</button>
+                                {error ? (<p className='error__message'>You must be logged in to comment</p>) : null}
+                            </Form>
+                        )}
+                    </Formik>
+                    
+                </div>
+                <h3 className={`${comments.length === 0 ? 'no__comments' : 'comments--displayed'}`}>No comments currently, be the first!</h3>
+                {comments.map((comment) =>{
+                    const {id, content, created_on, user_name} = comment;
+                    return (
+                        <Comment
+                            key={id}
+                            id={id}
+                            content={content}
+                            timestamp={created_on}
+                            user={user_name}
+                        />
+                    )
+                })}
             </div>
-            <h3 className={`${comments.length === 0 ? 'no__comments' : 'comments--displayed'}`}>No comments currently, be the first!</h3>
-            {comments.map((comment) =>{
-                const {id, content, created_on, user_name} = comment;
-                return (
-                    <Comment
-                        key={id}
-                        id={id}
-                        content={content}
-                        timestamp={created_on}
-                        user={user_name}
-                    />
-                )
-            })}
-             
         </div>
     );
 };

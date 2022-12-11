@@ -7,7 +7,8 @@
     border-radius: .25rem;
     padding: .5rem .5rem;
     width: 75%;
-    align-self: flex-end;
+    margin: 1rem 0;
+    margin-left: auto;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
 
     &__info {
@@ -19,6 +20,11 @@
             font-size: .8125rem;
             line-height: 1.0625rem;
             font-weight: 500;
+
+            @include responsive.tablet {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
         }
     }
 
@@ -26,5 +32,10 @@
         color: colors.$black;
         font-size: .8125rem;
         line-height: 1.0625rem;
+
+        @include responsive.tablet {
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
     }
 }

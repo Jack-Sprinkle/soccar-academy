@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function TabletMenu() {
     return (
         <div className='tablet'>
+            <h2 className='tablet__heading'>Menu</h2>
             <ul className='tablet__list'>
                 <Link to='/'><li className='tablet__list-item'>Home</li></Link>
                 <Link to='/create-account'><li className='tablet__list-item'>Create Account</li></Link>
