@@ -43,6 +43,7 @@ function MMRTracker({userId}) {
     return (
         <main className='tracker__container'>
             <h2 className='tracker__heading'>MMR Standard Tracker</h2>
+            <p className='tracker__info'>Updating your MMR under the "Profile" section will display your new MMR here and keep track of your historic MMR.</p>
             <div className='tracker'>
                 {mmrData.map((record, i) =>{
                     return (

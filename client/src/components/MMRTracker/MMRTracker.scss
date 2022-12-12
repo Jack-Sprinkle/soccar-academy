@@ -30,6 +30,21 @@
         }
     }
 
+    &__info {
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 1rem;
+        color: colors.$white;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
+        width: 80%;
+
+        @include responsive.tablet {
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
+    }
+
     &__column {
         display: flex;
         flex-direction: column;

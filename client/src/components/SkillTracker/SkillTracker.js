@@ -67,6 +67,8 @@ function SkillTracker() {
     return (
         <div className='skills'>
             <h2 className='skills__heading'>Skills Tracker</h2>
+            <p className='skills__info'>Write the skill you'd like to work on in the input, click add. Once your feel confident in your skill, click 
+                it in the list to cross it off! If you'd like to reset your list of skills, click clear.</p>
             <input className='skills__input' type='text' value={input} onInput={(e) => setInput(e.target.value)} />
             <button className='skills__submit' onClick={handleClick}>Add</button>
             <div className='skills__container'>

@@ -29,6 +29,20 @@
         }
     }
 
+    &__info {
+        font-size: .875rem;
+        line-height: 1.125rem;
+        color: colors.$white;
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+
+        @include responsive.tablet {
+            font-size: 1.125rem;
+            line-height: 1.375rem;
+        }
+    }
+
     &__input {
         align-self: center;
         border-radius: .25rem;
