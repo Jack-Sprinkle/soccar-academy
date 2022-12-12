@@ -35,7 +35,7 @@ module.exports = [
 
     {
         id: 'f8a7630d-bdc2-4f73-815d-55eb53b55b50',
-        user_id: '',
+        user_id: 'ff771452-d4e8-4d21-8773-2ace1dfff266',
         category: 'skills',
         title: 'Wall shots',
         content: "I've been working on my wall shots for a little while now and don't seem to be improving. Can anyone help out?"
