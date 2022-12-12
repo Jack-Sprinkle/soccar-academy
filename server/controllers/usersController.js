@@ -124,7 +124,6 @@ exports.updateMMR = async(req, resp) => {
 }
 
 exports.delete = async(req, resp) => {
-    console.log(req.params.userId)
     try {
         await knex('users')
             .where({id: req.params.userId}).first()
