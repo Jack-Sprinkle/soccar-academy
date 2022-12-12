@@ -20,7 +20,6 @@ const newAccountSchema = Yup.object().shape({
 function CreateAccount({isLoggedIn}) {
     const API_KEY = process.env.REACT_APP_API_KEY;
 
-    const [apiResponse, setAPIResponse] = useState(null) 
     const [error, setError] = useState(null)
     const [success, setSuccess] = useState(null)
 
