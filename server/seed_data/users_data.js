@@ -22,12 +22,12 @@ module.exports = [
         epic_id: 'user1',
         discord_name: 'user1',
         mmr_standard: '945',
-        user_bio: 'looking forward to getting better!',
+        user_bio: 'Looking for a coach to take me to the next leve.',
         user_coach: 'no'
     },
 
     {
-        id: '1e2283b6-7f9c-483b-a193-d70c754e024e',
+        id: '305f660a-a2cf-43df-9493-5335472c520d',
         user_name: 'User 2',
         user_email: 'user2@gmail.com',
         user_password: generatePassword(),
