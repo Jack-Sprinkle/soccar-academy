@@ -15,6 +15,9 @@
 
     &--tablet {
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__heading {
@@ -25,6 +28,11 @@
         line-height: 1.75rem;
         font-weight: 500;
         color: colors.$white;
+
+        @include responsive.tablet {
+            font-size: 1.75rem;
+            line-height: 2rem;
+        }
     }
 
     &__info {
@@ -53,4 +61,100 @@
 
 .special {
     font-weight: 500;
+}
+
+.support__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    &-container {
+        width: 100%;
+    }
+
+    &-heading {
+        text-align: center;
+        margin: 0;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+        color: colors.$white;
+
+        @include responsive.tablet {
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+        }
+    }
+
+    &-label {
+        color: colors.$white;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+
+        @include responsive.tablet {
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
+    }
+
+    &-input {
+        width: 70%;
+        border-radius: .25rem;
+        height: 1.25rem;
+        border: 1px solid colors.$light-blue;
+
+        &:focus {
+            border: 1px solid colors.$dark-blue;
+            outline: none;
+        }
+
+        @include responsive.tablet {
+            height: 1.5rem;
+        }
+
+        &--large {
+            width: 70%;
+
+            border-radius: .25rem;
+            height: 3rem;
+            resize: none;
+            border: 1px solid colors.$light-blue;
+            justify-self: flex-end;
+            margin-left: auto;
+    
+            &:focus {
+                border: 1px solid colors.$dark-blue;
+                outline: none;
+            }
+        }
+
+        &--special {
+            display: none !important;
+        }
+    }
+
+    &-submit {
+        border-radius: .25rem;
+        color: colors.$white;
+        background-color: colors.$orange;
+        border: 1px solid colors.$orange;
+        width: 5rem;
+        height: 1.75rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
+        font-weight: 700;
+        align-self: center;
+    
+        &:hover {
+            background-color: colors.$orange-hover;
+            border: 1px solid colors.$orange-hover;
+        }
+    }
 }
