@@ -19,4 +19,8 @@ router
     .route('/mmr')
     .put(authorize, usersController.updateMMR);
 
+router
+    .route('/delete/:userId')
+    .delete(authorize, usersController.delete)
+
 module.exports = router;

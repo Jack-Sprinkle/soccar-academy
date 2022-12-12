@@ -1,9 +1,34 @@
 import './UserProfile.scss';
 import UpdateMMR from '../UpdateMMR/UpdateMMR';
 import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-function UserProfile({userId, userName, discord, epic, mmr, bio}) {
+function UserProfile({userId, userName, discord, epic, mmr, bio, setIsLoggedIn, setUser}) {
     const [mmrShow, setMMRShow] = useState(null)
+    const [deleteAccount, setDeleteAccount] = useState(null)
+
+    const API_KEY = process.env.REACT_APP_API_KEY
+    const token = sessionStorage.getItem('token')
+    const navigate = useNavigate()
+
+    const handleDelete = () => {
+        axios.delete(`${API_KEY}/users/delete/${userId}`, {
+            headers: {
+                Authorization: `Bearer: ${token}`
+            }
+            })
+            .then(response => {
+                alert('Account deleted')
+                setUser(null)
+                setIsLoggedIn(false)
+                sessionStorage.removeItem('token')
+                navigate('/')
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
+            })
+    }
 
     return (
         <div className='profile'>
@@ -18,7 +43,13 @@ function UserProfile({userId, userName, discord, epic, mmr, bio}) {
                 </div>
             </div>
             <button onClick={() => setMMRShow(true)} className='profile__update'>Update MMR</button>
-            <button className='profile__delete'>Delete Account</button>
+            <button onClick={() => setDeleteAccount(true)}className='delete'>Delete Account</button>
+            {deleteAccount ? 
+            (<div className='delete-container'><p className='delete__text'>Deleting account will remove all posts and comments, 
+                are you sure you want to delete your account?</p>
+                <button onClick={handleDelete}className='delete__button'>Yes</button>
+                <button onClick={()=> setDeleteAccount(false)} className='delete__button'>No</button>
+                </div>) : null}
             <UpdateMMR
                 mmrShow={mmrShow}
                 setMMRShow={setMMRShow}

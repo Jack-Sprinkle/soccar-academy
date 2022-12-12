@@ -4,7 +4,7 @@ import MMRTracker from '../../components/MMRTracker/MMRTracker';
 import SkillTracker from '../../components/SkillTracker/SkillTracker';
 import TabletMenu from '../../components/TabletMenu/TabletMenu';
 
-function Dashboard({user, isLoggedIn}) {
+function Dashboard({user, isLoggedIn, setIsLoggedIn, setUser}) {
 
     if(!isLoggedIn) {
         return (
@@ -30,6 +30,8 @@ function Dashboard({user, isLoggedIn}) {
             <TabletMenu />
             <div className='dashboard'>
                 <UserProfile
+                    setIsLoggedIn={setIsLoggedIn}
+                    setUser={setUser}
                     userId={id}
                     userName={user_name}
                     discord={discord_name}

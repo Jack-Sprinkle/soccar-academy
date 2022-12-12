@@ -77,7 +77,7 @@ function App() {
           <Route path='/:category' element={<PostsPage />}></Route>
           <Route path='/:category/newpost' element={<CreatePost user={user} isLoggedIn={isLoggedIn} />}></Route>
           <Route path='/:category/:postId/comments' element={<ThreadPage user={user} />}></Route>
-          <Route path='/dashboard' element={<Dashboard user={user} isLoggedIn={isLoggedIn} />}></Route>
+          <Route path='/dashboard' element={<Dashboard user={user} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} />}></Route>
           <Route path='/coaches' element={<FindCoachPage user={user} isLoggedIn={isLoggedIn} />}></Route>
         </Routes>
       </BrowserRouter>

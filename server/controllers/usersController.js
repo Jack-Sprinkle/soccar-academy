@@ -122,3 +122,15 @@ exports.updateMMR = async(req, resp) => {
         resp.status(400).send(`Failed to update MMR`)
     }
 }
+
+exports.delete = async(req, resp) => {
+    console.log(req.params.userId)
+    try {
+        await knex('users')
+            .where({id: req.params.userId}).first()
+            .del()
+        resp.status(200).send(`Account successfully deleted`)
+    } catch {
+        resp.status(400).send(`Failed to delete account`)
+    }
+}
