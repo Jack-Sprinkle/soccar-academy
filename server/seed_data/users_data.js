@@ -27,7 +27,7 @@ module.exports = [
     },
 
     {
-        id: '305f660a-a2cf-43df-9493-5335472c520d',
+        id: 'af6fb835-ce28-434f-9515-80e5d968c4fc',
         user_name: 'User 2',
         user_email: 'user2@gmail.com',
         user_password: generatePassword(),

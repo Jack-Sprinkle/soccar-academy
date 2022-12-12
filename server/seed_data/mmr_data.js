@@ -9,7 +9,7 @@ module.exports = [
 
     {
         id: 'd8b2ea61-3460-4533-9040-87377f6c3f77',
-        user_id: '1e2283b6-7f9c-483b-a193-d70c754e024e',
+        user_id: 'af6fb835-ce28-434f-9515-80e5d968c4fc',
         mmr_standard: '503'
     },
 

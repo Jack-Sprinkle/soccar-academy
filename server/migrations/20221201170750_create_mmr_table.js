@@ -5,7 +5,6 @@ exports.up = function(knex) {
             .uuid('user_id')
             .notNullable()
             .references('users.id')
-            .onUpdate('CASCADE')
             .onDelete('CASCADE');
         table.integer('mmr_standard').notNullable().unsigned();
         table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());

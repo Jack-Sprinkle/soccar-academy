@@ -10,7 +10,7 @@ module.exports = [
 
     {
         id: '7edf9345-2891-49fa-bd6c-f77551a74153',
-        user_id: '305f660a-a2cf-43df-9493-5335472c520d',
+        user_id: 'af6fb835-ce28-434f-9515-80e5d968c4fc',
         post_id: '767c5eb4-2c51-4c0f-8186-428c07d74d10',
         content: "Thanks, I'll check it out."
     },

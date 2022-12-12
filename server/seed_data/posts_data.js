@@ -11,7 +11,7 @@ module.exports = [
 
     {
         id: '767c5eb4-2c51-4c0f-8186-428c07d74d10',
-        user_id: '305f660a-a2cf-43df-9493-5335472c520d',
+        user_id: 'af6fb835-ce28-434f-9515-80e5d968c4fc',
         category: 'skills',
         title: 'Aerial Drills',
         content: 'Does anyone have a solid training pack for aerial dribbling?'
