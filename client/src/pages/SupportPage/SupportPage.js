@@ -9,7 +9,7 @@ function SupportPage() {
                 <h2 className='support__heading'>Support</h2>
                 <div className='support__info'>
                     <p className='support__text'>Any issues on the site or with another user, 
-                    please send an email to soccaracademy@gmail.com</p>
+                    please fill out the form below.</p>
                 </div>
                 <div className='support__form-container'>
                     <h2 className='support__form-heading'>Contact Us</h2>
