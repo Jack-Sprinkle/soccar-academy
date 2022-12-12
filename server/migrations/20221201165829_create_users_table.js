@@ -9,6 +9,7 @@ exports.up = function(knex) {
         table.integer('mmr_standard').notNullable().unsigned();
         table.string('user_bio');
         table.string('user_coach').notNullable();
+        table.timestamp('created_on').notNullable().defaultTo(knex.fn.now());
     });
 };
 

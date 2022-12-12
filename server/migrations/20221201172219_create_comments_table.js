@@ -12,6 +12,7 @@ exports.up = function(knex) {
             .references('posts.id')
             .onDelete('CASCADE');
         table.string('content').notNullable();
+        table.timestamp('created_on').notNullable().defaultTo(knex.fn.now())
     });
 };
 

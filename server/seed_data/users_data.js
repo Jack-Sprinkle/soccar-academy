@@ -15,7 +15,7 @@ const generatePassword = () => {
 
 module.exports = [
     {
-        id: uuid(),
+        id: '305f660a-a2cf-43df-9493-5335472c520d',
         user_name: 'User 1',
         user_email: 'user1@gmail.com',
         user_password: generatePassword(),
@@ -27,7 +27,7 @@ module.exports = [
     },
 
     {
-        id: uuid(),
+        id: '1e2283b6-7f9c-483b-a193-d70c754e024e',
         user_name: 'User 2',
         user_email: 'user2@gmail.com',
         user_password: generatePassword(),
@@ -39,7 +39,7 @@ module.exports = [
     },
 
     {
-        id: uuid(),
+        id: 'f6c68263-74fd-46b3-b316-d2eef411986c',
         user_name: 'User 3',
         user_email: 'user3@gmail.com',
         user_password: generatePassword(),
@@ -51,7 +51,7 @@ module.exports = [
     },
 
     {
-        id: uuid(),
+        id: '07b5daaa-7e39-44c3-b2c1-bd5df3be54ac',
         user_name: 'User 4',
         user_email: 'user4@gmail.com',
         user_password: generatePassword(),
@@ -63,7 +63,7 @@ module.exports = [
     },
 
     {
-        id: uuid(),
+        id: 'ff771452-d4e8-4d21-8773-2ace1dfff266',
         user_name: 'User 5',
         user_email: 'user5@gmail.com',
         user_password: generatePassword(),
@@ -75,7 +75,7 @@ module.exports = [
     },
 
     {
-        id: uuid(),
+        id: '129dd665-07aa-4709-bb98-a121e587b26f',
         user_name: 'User 6',
         user_email: 'user6@gmail.com',
         user_password: generatePassword(),
@@ -87,7 +87,7 @@ module.exports = [
     },
 
     {
-        id: uuid(),
+        id: 'c7be8d30-87ad-40e9-8d10-ca1076ca9abe',
         user_name: 'User 7',
         user_email: 'user7@gmail.com',
         user_password: generatePassword(),
@@ -99,7 +99,7 @@ module.exports = [
     },
 
     {
-        id: uuid(),
+        id: '40c61905-58a7-47ab-a21b-eabf9e738a43',
         user_name: 'User 8',
         user_email: 'user8@gmail.com',
         user_password: generatePassword(),
@@ -111,7 +111,7 @@ module.exports = [
     },
 
     {
-        id: uuid(),
+        id: '28a43464-695b-495e-bac7-a5ac37b485fb',
         user_name: 'User 9',
         user_email: 'user9@gmail.com',
         user_password: generatePassword(),

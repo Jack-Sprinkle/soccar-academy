@@ -9,6 +9,7 @@ exports.up = function(knex) {
         table.string('category').notNullable();
         table.string('title').notNullable();
         table.string('content').notNullable();
+        table.timestamp('created_on').notNullable().defaultTo(knex.fn.now())
     })
 };
 
