@@ -18,7 +18,7 @@ const newAccountSchema = Yup.object().shape({
 });
 
 function CreateAccount({isLoggedIn}) {
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const [error, setError] = useState(null)
     const [success, setSuccess] = useState(null)
@@ -35,7 +35,7 @@ function CreateAccount({isLoggedIn}) {
             user_coach: values.coach
         }
 
-        axios.post(`${API_KEY}/users/register`, newUser)
+        axios.post(`${API_URL}/users/register`, newUser)
             .then(response => {
                 setSuccess(response.data)
             }).catch(error => {

@@ -8,12 +8,12 @@ function UserProfile({userId, userName, discord, epic, mmr, bio, setIsLoggedIn, 
     const [mmrShow, setMMRShow] = useState(null)
     const [deleteAccount, setDeleteAccount] = useState(null)
 
-    const API_KEY = process.env.REACT_APP_API_KEY
+    const API_URL = process.env.REACT_APP_API_URL
     const token = sessionStorage.getItem('token')
     const navigate = useNavigate()
 
     const handleDelete = () => {
-        axios.delete(`${API_KEY}/users/delete/${userId}`, {
+        axios.delete(`${API_URL}/users/delete/${userId}`, {
             headers: {
                 Authorization: `Bearer: ${token}`
             }

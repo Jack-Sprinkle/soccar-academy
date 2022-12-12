@@ -11,7 +11,7 @@ const newPostSchema = Yup.object().shape({
 })
 
 function CreatePost({user, isLoggedIn}) {
-    const API_KEY = process.env.REACT_APP_API_KEY
+    const API_URL = process.env.REACT_APP_API_URL
     const navigate = useNavigate();
     const {category} = useParams()
 
@@ -43,7 +43,7 @@ function CreatePost({user, isLoggedIn}) {
             content: values.content
         }
 
-        axios.post(`${API_KEY}/posts/${category}`, newPost, {
+        axios.post(`${API_URL}/posts/${category}`, newPost, {
             headers: {
                 Authorization: `Bearer: ${token}`
             }

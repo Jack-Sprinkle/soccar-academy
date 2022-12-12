@@ -10,7 +10,7 @@ const LoginSchema = Yup.object().shape({
 
 function MMR({userId, mmrShow, setMMRShow, onClose}) {
     const token = sessionStorage.getItem('token')
-    const API_KEY = process.env.REACT_APP_API_KEY
+    const API_URL = process.env.REACT_APP_API_URL
 
     if (!mmrShow) {
         return null;
@@ -25,7 +25,7 @@ function MMR({userId, mmrShow, setMMRShow, onClose}) {
             user_id: userId
         }
         //post MMR to mmr table to keep track of user MMR over time
-        axios.post(`${API_KEY}/mmr/${userId}`, updatedMMR, {
+        axios.post(`${API_URL}/mmr/${userId}`, updatedMMR, {
             headers: {
                 Authorization: `Bearer: ${token}`
             }
@@ -35,12 +35,13 @@ function MMR({userId, mmrShow, setMMRShow, onClose}) {
                 mmr_standard: updatedMMR.mmr_standard
             }
             //put request to update user table with newest MMR 
-            return axios.put(`${API_KEY}/users/mmr`, mmrToUpdate, {
+            return axios.put(`${API_URL}/users/mmr`, mmrToUpdate, {
                 headers: {
                     Authorization: `Bearer: ${token}`
                 }
             })
             .then(response => {
+                setMMRShow(false)
             })
         }).catch(error => {
         })

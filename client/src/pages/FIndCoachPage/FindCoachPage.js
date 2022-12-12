@@ -9,7 +9,7 @@ function FindCoachPage({user, isLoggedIn}) {
     //initialize list of coaches
     const [coaches, setCoaches] = useState(null);
 
-    const API_KEY = process.env.REACT_APP_API_KEY
+    const API_URL = process.env.REACT_APP_API_URL
     
     //on mount get list of all coaches.
     useEffect(() => {
@@ -17,7 +17,7 @@ function FindCoachPage({user, isLoggedIn}) {
         if(!token) {
             return
         } else {
-            axios.get(`${API_KEY}/coaches`, {
+            axios.get(`${API_URL}/coaches`, {
                 headers: {
                     Authorization: `Bearer: ${token}`
                 }

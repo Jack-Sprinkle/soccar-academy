@@ -17,7 +17,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 
 function App() {
-  const API_KEY = process.env.REACT_APP_API_KEY
+  const API_URL = process.env.REACT_APP_API_URL
 
   const [user, setUser] = useState(null)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,11 +29,11 @@ function App() {
         user_email: values.email,
         user_password: values.password
     }
-    axios.post(`${API_KEY}/users/login`, user)
+    axios.post(`${API_URL}/users/login`, user)
         .then(response => {
           sessionStorage.setItem('token', response.data.token);
           setIsLoggedIn(true);
-          return axios.get(`${API_KEY}/users/current`, {
+          return axios.get(`${API_URL}/users/current`, {
             headers: {
               Authorization: `Bearer: ${response.data.token}`
             }
@@ -54,7 +54,7 @@ function App() {
       setIsLoggedIn(false)
     } else {
       setIsLoggedIn(true)
-      axios.get(`${API_KEY}/users/current`, {
+      axios.get(`${API_URL}/users/current`, {
         headers: {
           Authorization: `Bearer: ${token}`
         }

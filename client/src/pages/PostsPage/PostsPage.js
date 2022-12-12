@@ -10,12 +10,12 @@ function PostsPage() {
     //Initialize thread list as state
     const [threads, setThreads] = useState([])
 
-    const API_KEY = process.env.REACT_APP_API_KEY
+    const API_URL = process.env.REACT_APP_API_URL
 
     //Make axios call on mount of components
     const {category} = useParams();
     useEffect(() => {
-        axios.get(`${API_KEY}/posts/${category}`)
+        axios.get(`${API_URL}/posts/${category}`)
         .then(response => {
             setThreads(response.data)
         })
