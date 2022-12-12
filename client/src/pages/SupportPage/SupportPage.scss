@@ -1,0 +1,56 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/responsive';
+
+.support {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+
+    @include responsive.tablet {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    &--tablet {
+        margin: 0 auto;
+    }
+
+    &__heading {
+        text-align: center;
+        margin: 0;
+        padding-top: 1.5rem;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        font-weight: 500;
+        color: colors.$white;
+    }
+
+    &__info {
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 1px solid colors.$orange;
+    }
+
+    &__text {
+        margin: 0;
+        text-align: center;
+        color: colors.$white;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
+        padding: 1rem .5rem;
+        width: 15rem;
+        
+
+        @include responsive.tablet {
+            font-size: 1rem;
+            line-height: 1.25rem;
+            width: 20rem;
+        }
+    }
+}
+
+.special {
+    font-weight: 500;
+}

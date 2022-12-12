@@ -14,16 +14,19 @@ function FindCoachPage({user, isLoggedIn}) {
     //on mount get list of all coaches.
     useEffect(() => {
       const token = sessionStorage.getItem('token')
-        
-        axios.get(`${API_KEY}/coaches`, {
-            headers: {
-                Authorization: `Bearer: ${token}`
-            }
-            })
-            .then(response => {
-                setCoaches(response.data)
-            }).catch(error => {
-            })
+        if(!token) {
+            return
+        } else {
+            axios.get(`${API_KEY}/coaches`, {
+                headers: {
+                    Authorization: `Bearer: ${token}`
+                }
+                })
+                .then(response => {
+                    setCoaches(response.data)
+                }).catch(error => {
+                })
+        }
     }, [])
 
 
