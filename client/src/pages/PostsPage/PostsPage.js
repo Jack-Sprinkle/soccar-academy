@@ -27,7 +27,10 @@ function PostsPage() {
     //If there are no threads, early return
     if(!threads) {
         return (
-            <div>Loading posts...</div>
+            <div className='loading'>
+            <TabletMenu />
+            <p className='loading__text'>Loading posts...</p>
+        </div>
         )
     }
 
