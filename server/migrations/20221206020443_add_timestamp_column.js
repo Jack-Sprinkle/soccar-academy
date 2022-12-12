@@ -1,9 +1,6 @@
 
 exports.up = function(knex) {
     return knex.schema
-        .table('users', (table) => {
-            table.timestamp('created_on').notNullable().defaultTo(knex.fn.now());
-        })
         .table('posts', (table) => {
             table.timestamp('created_on').notNullable().defaultTo(knex.fn.now());
         })

@@ -8,7 +8,7 @@ import TabletMenu from '../../components/TabletMenu/TabletMenu';
 
 function PostsPage() {
     //Initialize thread list as state
-    const [threads, setThreads] = useState(null)
+    const [threads, setThreads] = useState([])
 
     const API_KEY = process.env.REACT_APP_API_KEY
 

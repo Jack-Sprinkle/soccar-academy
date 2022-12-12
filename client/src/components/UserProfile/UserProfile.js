@@ -18,6 +18,7 @@ function UserProfile({userId, userName, discord, epic, mmr, bio}) {
                 </div>
             </div>
             <button onClick={() => setMMRShow(true)} className='profile__update'>Update MMR</button>
+            <button className='profile__delete'>Delete Account</button>
             <UpdateMMR
                 mmrShow={mmrShow}
                 setMMRShow={setMMRShow}

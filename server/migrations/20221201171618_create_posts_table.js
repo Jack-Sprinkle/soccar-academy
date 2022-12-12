@@ -3,9 +3,9 @@ exports.up = function(knex) {
         table.uuid('id').primary();
         table
             .uuid('user_id')
-            .notNullable()
             .references('users.id')
-            .onUpdate('CASCADE');
+            .notNullable()
+            .onDelete('CASCADE');
         table.string('category').notNullable();
         table.string('title').notNullable();
         table.string('content').notNullable();

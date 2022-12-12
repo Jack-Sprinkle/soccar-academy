@@ -66,4 +66,22 @@
             border: 1px solid colors.$orange-hover;
         }
     }
+
+    &__delete {
+        margin-top: 2rem;
+        border-radius: .25rem;
+        color: colors.$white;
+        background-color: colors.$orange;
+        border: 1px solid colors.$orange;
+        width: 10rem;
+        height: 2rem;
+        font-size: .8125rem;
+        line-height: 1.0625rem;
+        font-weight: 700;
+
+        &:hover {
+            background-color: colors.$orange-hover;
+            border: 1px solid colors.$orange-hover;
+        }
+    }
 }

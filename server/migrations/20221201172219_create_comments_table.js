@@ -3,14 +3,13 @@ exports.up = function(knex) {
         table.uuid('id').primary();
         table
             .uuid('user_id')
-            .notNullable()
             .references('users.id')
-            .onUpdate('CASCADE');
+            .notNullable()
+            .onDelete('CASCADE');
         table
             .uuid('post_id')
             .notNullable()
             .references('posts.id')
-            .onUpdate('CASCADE')
             .onDelete('CASCADE');
         table.string('content').notNullable();
     });
