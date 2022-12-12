@@ -9,7 +9,7 @@ function CoachCard({id, userName, discordName, mmr, bio}) {
                     <p className='coach__info-text'>Discord: {discordName}</p>
                     <p className='coach__info-text'>MMR: {mmr}</p>
                 </div>
-                <p className='coach__info-text'>{bio}</p>
+                <p className='coach__info-text--bio'>{bio}</p>
             </div>
         </div>
     );

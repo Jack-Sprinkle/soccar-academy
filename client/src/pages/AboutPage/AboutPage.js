@@ -14,7 +14,7 @@ function AboutPage() {
                         you to track your Matchmaking Rank overtime, keep track of the 
                         skills that you're working on. And most important, find other 
                         users who are willing to coach!</p>
-                    <p className='about__text special'>By Players, for Players</p>
+                    <p className='about__text special'>By Players, for Players!</p>
                 </div>
             </div>
         </main>

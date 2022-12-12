@@ -39,6 +39,19 @@
             line-height: 1.0625rem;
             margin: 0;
 
+            &--bio {
+                color: colors.$white;
+                font-size: .8125rem;
+                line-height: 1.0625rem;
+                margin: 0;
+                width: 75%;
+
+                @include responsive.tablet {
+                    font-size: 1rem;
+                    line-height: 1.25rem;
+                }
+            }
+
             @include responsive.tablet {
                 font-size: 1rem;
                 line-height: 1.25rem;
@@ -50,3 +63,4 @@
         display: flex;
     }
 }
+

@@ -45,7 +45,7 @@ function UserProfile({userId, userName, discord, epic, mmr, bio, setIsLoggedIn, 
             <button onClick={() => setMMRShow(true)} className='profile__update'>Update MMR</button>
             <button onClick={() => setDeleteAccount(true)}className='delete'>Delete Account</button>
             {deleteAccount ? 
-            (<div className='delete-container'><p className='delete__text'>Deleting account will remove all posts and comments, 
+            (<div className='delete-container'><p className='delete__text'>Deleting account will remove all your posts and comments, 
                 are you sure you want to delete your account?</p>
                 <button onClick={handleDelete}className='delete__button'>Yes</button>
                 <button onClick={()=> setDeleteAccount(false)} className='delete__button'>No</button>
