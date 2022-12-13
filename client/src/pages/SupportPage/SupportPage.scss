@@ -106,13 +106,16 @@
 
     &-input {
         width: 70%;
-        border-radius: .25rem;
         height: 1.25rem;
-        border: 1px solid colors.$light-blue;
+        background-color: rgba(6, 4, 152, 0.0);
+        color: colors.$white;
+        font-family: 'poppins';
+        border: none;
+        outline: none;
+        border-bottom: 1px solid colors.$light-blue;
 
         &:focus {
-            border: 1px solid colors.$dark-blue;
-            outline: none;
+            border-bottom: 1px solid colors.$dark-blue;
         }
 
         @include responsive.tablet {
@@ -121,17 +124,19 @@
 
         &--large {
             width: 70%;
-
-            border-radius: .25rem;
             height: 3rem;
             resize: none;
-            border: 1px solid colors.$light-blue;
+            background-color: rgba(6, 4, 152, 0.0);
+            color: colors.$white;
+            font-family: 'poppins';
+            border: none;
+            outline: none;
+            border-bottom: 1px solid colors.$light-blue;
             justify-self: flex-end;
             margin-left: auto;
     
             &:focus {
-                border: 1px solid colors.$dark-blue;
-                outline: none;
+                border-bottom: 1px solid colors.$dark-blue;
             }
         }
 

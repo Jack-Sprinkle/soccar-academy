@@ -74,14 +74,14 @@ function CreatePost({user, isLoggedIn}) {
                         <Form className='new-post__form'>
                             <label className='new-post__form-label'>
                                 Title
-                                <Field className={`new-post__form-input ${errors.title && touched.title ? 'new-post__form-input--invalid' : ''}`} name='title'/>
+                                <Field className={`new-post__form-input ${errors.title && touched.title ? 'new-post__form-input--invalid' : ''}`} placeholder='Title' name='title'/>
                             </label>
                             {errors.title && touched.title ? (
                                 <div className='new-post__form-errors'>{errors.title}</div>
                                 ) : null}
                             <label className='new-post__form-label'>
                                 Content
-                                <Field as='textarea' className={`new-post__form-input--large ${errors.content && touched.content ? 'new-post__form-input--invalid' : ''}`} name='content'/>
+                                <Field as='textarea' className={`new-post__form-input--large ${errors.content && touched.content ? 'new-post__form-input--invalid' : ''}`} placeholder='Post Content...' name='content'/>
                             </label>
                             {errors.content && touched.content ? (
                                 <div className='new-post__form-errors'>{errors.content}</div>

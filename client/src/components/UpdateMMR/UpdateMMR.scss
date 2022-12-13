@@ -5,7 +5,6 @@
 
 .MMR {
     width: 15rem;
-    background-color: colors.$off-white;
     border-radius: .25rem;
     position: absolute;
     top: 1rem;
@@ -15,11 +14,15 @@
     align-items: center;
     padding: .5rem;
     gap: 1rem;
-    border: 1px solid colors.$grey;
-    box-shadow: 2px 2px 2px colors.$grey;
+    background: rgba( 255, 255, 255, 0.8 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: .25rem;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 
     @include responsive.tablet {
-        right: 9rem;
+        left: 1rem;
     }
 
     &__heading {
@@ -56,6 +59,9 @@
     }
 
     &__label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         font-size: .8125rem;
         line-height: 1.0625rem;
         font-weight: 500;
@@ -67,18 +73,19 @@
     }
 
     &__input {
-        border-radius: .25rem;
         height: 1.25rem;
-        width: 70%;
-        border: 1px solid colors.$light-blue;
+        width: 100%;
+        background-color: rgba( 255, 255, 255, 0.0 );
+        border: none;
+        outline: none;
+        border-bottom: 1px solid colors.$light-blue;
 
         &:focus {
-            border: 1px solid colors.$dark-blue;
-            outline: none;
+            border-bottom: 1px solid colors.$dark-blue;
         }
 
         &--invalid {
-            border: 1px solid colors.$error;
+            border-bottom: 1px solid colors.$error;
         }
 
         @include responsive.tablet {
@@ -88,7 +95,7 @@
 
     &__close {
         border: none;
-        background-color: colors.$off-white;
+        background-color: rgba( 255, 255, 255, 0.0 );
         background-image: url('../../assets/icons/close.svg');
         background-repeat: no-repeat;
         background-position: center;

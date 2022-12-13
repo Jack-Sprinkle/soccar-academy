@@ -77,20 +77,21 @@
 
     &__input {
         margin-left: .5rem;
-        border-radius: .25rem;
         width: 70%;
         height: 1.25rem;
-        border: 1px solid colors.$light-blue;
+        background-color: rgba( 255, 255, 255, 0.0 );
+        border: none;
+        outline: none;
+        border-bottom: 1px solid colors.$light-blue;
         justify-self: flex-end;
         margin-left: auto;
 
         &:focus {
-            border: 1px solid colors.$dark-blue;
-            outline: none;
+            border-bottom: 1px solid colors.$dark-blue;
         }
 
         &--invalid {
-            border: 1px solid colors.$error;
+            border-bottom: 1px solid colors.$error;
         }
 
         @include responsive.tablet {

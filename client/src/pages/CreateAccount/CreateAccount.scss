@@ -36,6 +36,10 @@
         flex-direction: column;
         padding: .5rem;
 
+        @include responsive.tablet {
+            margin-left: 2rem;
+        }
+
         &-fields {
             display: flex;
             flex-direction: column;
@@ -49,7 +53,6 @@
         font-size: .8125rem;
         line-height: 1.0625rem;
         justify-content: space-between;
-        gap: .5rem;
 
         @include responsive.tablet {
             font-size: 1rem;
@@ -59,28 +62,34 @@
 
     &__input {
         margin-left: .5rem;
-        border-radius: .25rem;
         height: 1.25rem;
         width: 60%;
-        border: 1px solid colors.$light-blue;
+        background-color: rgba(6, 4, 152, 0.0);
+        color: colors.$white;
+        font-family: 'poppins';
+        border: none;
+        outline: none;
+        border-bottom: 1px solid colors.$light-blue;
 
         &:focus {
-            border: 1px solid colors.$dark-blue;
-            outline: none;
+            border-bottom: 1px solid colors.$dark-blue;
         }
 
         &--invalid {
-            border: 1px solid colors.$error;
+            border-bottom: 1px solid colors.$error;
         }
 
         &--large {
+            background-color: rgba(6, 4, 152, 0.1);
             font-family: 'poppins';
+            color: colors.$white;
             margin-left: .5rem;
-            border-radius: .25rem;
+            font-size: .8125rem;
             resize: none;
             width: 60%;
             height: 5rem;
-            border: 1px solid colors.$light-blue;
+            border: none;
+            border-bottom: 1px solid colors.$light-blue;
     
             &:focus {
                 border: 1px solid colors.$dark-blue;

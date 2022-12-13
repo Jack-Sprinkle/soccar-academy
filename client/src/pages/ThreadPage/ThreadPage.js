@@ -130,7 +130,7 @@ function ThreadPage({user}) {
                         {({errors, touched}) => (
                             <Form className='comment__form'>
                                 <div className='comment__form-input-container'>
-                                    <Field as='textarea' placeholder='Leave a comment...' className={`comment__form-input ${errors.comment && touched.comment ? 'comment__form-input--invalid' : ''}`} name='comment'></Field>
+                                    <Field placeholder='Leave a comment...' className={`comment__form-input ${errors.comment && touched.comment ? 'comment__form-input--invalid' : ''}`} name='comment'></Field>
                                     {errors.comment && touched.comment ? (
                                         <div className='comment__form-errors'>{errors.comment}</div>
                                     ) : null}

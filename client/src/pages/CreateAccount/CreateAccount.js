@@ -82,7 +82,7 @@ function CreateAccount({isLoggedIn}) {
                             <div className='new__form-fields'>
                                 <label className='new__label'>
                                     Username
-                                    <Field className={`new__input ${errors.username && touched.username ? 'new__input--invalid' : ''}`} name='username'/> 
+                                    <Field className={`new__input ${errors.username && touched.username ? 'new__input--invalid' : ''}`} placeholder='Username' name='username'/> 
                                 </label>
                                 {errors.username && touched.username ? (
                                 <div className='new__errors'>{errors.username}</div>
@@ -90,7 +90,7 @@ function CreateAccount({isLoggedIn}) {
 
                                 <label className='new__label'>
                                     Email
-                                    <Field className={`new__input ${errors.email && touched.email ? 'new__input--invalid' : ''}`} name='email'/>
+                                    <Field className={`new__input ${errors.email && touched.email ? 'new__input--invalid' : ''}`} placeholder='Email' name='email'/>
                                 </label>
                                 {errors.email && touched.email ? (
                                 <div className='new__errors'>{errors.email}</div>
@@ -98,7 +98,7 @@ function CreateAccount({isLoggedIn}) {
 
                                 <label className='new__label'>  
                                     Epic Id
-                                    <Field className={`new__input ${errors.epicId && touched.epicId ? 'new__input--invalid' : ''}`} name='epicId'/>
+                                    <Field className={`new__input ${errors.epicId && touched.epicId ? 'new__input--invalid' : ''}`} placeholder='Epic Id' name='epicId'/>
                                 </label>
                                 {errors.epicId && touched.epicId ? (
                                 <div className='new__errors'>{errors.epicId}</div>
@@ -106,7 +106,7 @@ function CreateAccount({isLoggedIn}) {
 
                                 <label className='new__label'>  
                                     Discord
-                                    <Field className={`new__input ${errors.discordId && touched.discordId ? 'new__input--invalid' : ''}`} name='discordId'/>
+                                    <Field className={`new__input ${errors.discordId && touched.discordId ? 'new__input--invalid' : ''}`} placeholder='Discord' name='discordId'/>
                                 </label>
                                 {errors.discordId && touched.discordId ? (
                                 <div className='new__errors'>{errors.discordId}</div>
@@ -114,7 +114,7 @@ function CreateAccount({isLoggedIn}) {
 
                                 <label className='new__label'>  
                                     Standard MMR
-                                    <Field className={`new__input ${errors.standardMMR && touched.standardMMR ? 'new__input--invalid' : ''}`} name='standardMMR'/>
+                                    <Field className={`new__input ${errors.standardMMR && touched.standardMMR ? 'new__input--invalid' : ''}`} placeholder='Standard MMR' name='standardMMR'/>
                                 </label>
                                 {errors.standardMMR && touched.standardMMR ? (
                                 <div className='new__errors'>{errors.standardMMR}</div>
@@ -122,7 +122,7 @@ function CreateAccount({isLoggedIn}) {
 
                                 <label className='new__label'>  
                                     Bio
-                                    <Field as='textarea' className={`new__input--large ${errors.bio && touched.bio ? 'new__input--invalid' : ''}`} name='bio'/>
+                                    <Field as='textarea' className={`new__input--large ${errors.bio && touched.bio ? 'new__input--invalid' : ''}`} placeholder='Best coaching ' name='bio'/>
                                 </label>
                                 {errors.bio && touched.bio ? (
                                 <div className='new__errors'>{errors.bio}</div>
@@ -130,7 +130,7 @@ function CreateAccount({isLoggedIn}) {
 
                                 <label className='new__label'>  
                                     Password
-                                    <Field type='password' className={`new__input ${errors.password && touched.password ? 'new__input--invalid' : ''}`} name='password'/>
+                                    <Field type='password' className={`new__input ${errors.password && touched.password ? 'new__input--invalid' : ''}`} placeholder='Password' name='password'/>
                                 </label>
                                 {errors.password && touched.password ? (
                                 <div className='new__errors'>{errors.password}</div>
@@ -138,7 +138,7 @@ function CreateAccount({isLoggedIn}) {
 
                                 <label className='new__label'>  
                                     Confirm Password
-                                    <Field type='password' className={`new__input ${errors.confirmPassword && touched.confirmPassword ? 'new__input--invalid' : ''}`} name='confirmPassword'/>
+                                    <Field type='password' className={`new__input ${errors.confirmPassword && touched.confirmPassword ? 'new__input--invalid' : ''}`} placeholder='Confirm Password' name='confirmPassword'/>
                                 </label>
                                 {errors.confirmPassword && touched.confirmPassword ? (
                                 <div className='new__errors'>{errors.confirmPassword}</div>

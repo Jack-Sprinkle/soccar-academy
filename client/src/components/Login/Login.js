@@ -37,7 +37,7 @@ function Login({loginShow, onClose, handleLogin, errorMessage, isLoggedIn}) {
                         <div className='login__form-fields'>
                             <label className='login__label'>
                                 Email
-                                <Field className={`login__input ${errors.email && touched.email ? 'login__input--invalid' : ''}`} name='email'/>
+                                <Field className={`login__input ${errors.email && touched.email ? 'login__input--invalid' : ''}`} placeholder='Email' name='email'/>
                             </label>
                             {errors.email && touched.email ? (
                             <div className='login__errors'>{errors.email}</div>
@@ -45,7 +45,7 @@ function Login({loginShow, onClose, handleLogin, errorMessage, isLoggedIn}) {
                             
                             <label className='login__label'>
                                 Password
-                                <Field className={`login__input ${errors.password && touched.password ? 'login__input--invalid' : ''}`} name='password' type='password' />
+                                <Field className={`login__input ${errors.password && touched.password ? 'login__input--invalid' : ''}`} placeholder='Password' name='password' type='password' />
                             </label>
                             {errors.password && touched.password ? (
                                 <div className='login__errors'>{errors.password}</div>

@@ -16,15 +16,15 @@ function SupportPage() {
                     <form action="https://getform.io/f/05e2a40f-b1da-4bf4-9ffd-96d223abc4c5" method="POST" className='support__form'>
                         <label className='support__form-label'>
                             Name
-                            <input className='support__form-input' type='text' name='name'></input>
+                            <input className='support__form-input' type='text' name='name' placeholder='Name/Username'></input>
                         </label>
                         <label className='support__form-label'>
                             Email
-                            <input className='support__form-input' type='email' name='email'></input>
+                            <input className='support__form-input' type='email' name='email' placeholder='Email'></input>
                         </label>
                         <label className='support__form-label'>
                             Message
-                            <textarea className='support__form-input--large' name='message'></textarea>
+                            <textarea className='support__form-input--large' name='message' placeholder='Message...'></textarea>
                         </label>
                         <input className='support__form-input--special' type='hidden' name='_gotcha'></input>
                         <button className='support__form-submit' type='submit'>Send</button>
