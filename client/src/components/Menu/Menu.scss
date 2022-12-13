@@ -9,16 +9,14 @@
     left: 1.2rem;
     display: flex;
     flex-direction: column;
-    background-color: colors.$off-white;
     padding: .5rem;
     border-radius: .25rem;
     width: 10rem;
-    border: 1px solid colors.$dark-blue;
     background: rgba( 255, 255, 255, 0.8 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4.5px );
     -webkit-backdrop-filter: blur( 4.5px );
-    border-radius: 10px;
+    border-radius: .25rem;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 
     &__heading-container {
@@ -36,7 +34,7 @@
 
     &__close {
         border: none;
-        background-color: colors.$off-white;
+        background-color: rgba( 255, 255, 255, 0.18 );
         background-image: url('../../assets/icons/close.svg');
         background-repeat: no-repeat;
         background-position: center;

@@ -74,6 +74,7 @@
         }
 
         &--large {
+            font-family: 'poppins';
             margin-left: .5rem;
             border-radius: .25rem;
             resize: none;
@@ -150,9 +151,15 @@
         background-position-x: left;
         background-size: .75rem;
         padding-left: 1rem;
-        font-size: .625rem;
+        font-size: .75rem;
         color: colors.$error;
         margin: 0;
+
+        @include responsive.tablet {
+            font-size: .875rem;
+            line-height: 1.125rem;
+            background-size: 1rem;
+        }
     }
 
     &__submit {

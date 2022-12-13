@@ -129,6 +129,7 @@
     gap: 1rem;
 
     &-input {
+        font-family: 'poppins';
         resize: none;
         margin-left: .5rem;
         border-radius: .25rem;
@@ -183,9 +184,14 @@
         background-position-x: left;
         background-size: .75rem;
         padding-left: 1rem;
-        font-size: .625rem;
+        font-size: .75rem;
         color: colors.$error;
         margin: 0;
+
+        @include responsive.tablet {
+            font-size: .875rem;
+            line-height: 1.125rem;
+        }
     }
 }
 

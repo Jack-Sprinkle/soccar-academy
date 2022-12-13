@@ -7,13 +7,13 @@ import TabletMenu from '../../components/TabletMenu/TabletMenu';
 
 //Set up form validation schema
 const newAccountSchema = Yup.object().shape({
-    username: Yup.string().min(2, 'Too Short').max(50, 'Too Long').required('This field is required'),
+    username: Yup.string().min(2, 'Too short').max(50, 'Too long').required('This field is required'),
     email: Yup.string().email('Invalid email').required('This field is required.'),
     epicId: Yup.string().min(2, 'Too short').max(50, 'Too long').required('This field is required'),
     discordId: Yup.string().min(2, 'Too short').max(50, 'Too long').required('This field is required'),
-    standardMMR: Yup.number().required('This field is required'),
+    standardMMR: Yup.number('Must be a number').required('This field is required'),
     bio: Yup.string(),
-    password: Yup.string().required('This field is required'),
+    password: Yup.string().min(5, 'Too short').required('This field is required'),
     coach: Yup.string().required()
 });
 
@@ -138,15 +138,15 @@ function CreateAccount({isLoggedIn}) {
                                     <h3 className='new__radio-heading'>Willing to coach?</h3>
                                     <label className='new__radio-button'>
                                         Yes
-                                        <Field type='radio' className={`new__radio ${errors.password && touched.password ? 'new__radio--invalid' : ''}`} name='coach' value='yes'/>
+                                        <Field type='radio' className={`new__radio ${errors.coach && touched.coach ? 'new__radio--invalid' : ''}`} name='coach' value='yes'/>
                                     </label>
                                     <label className='new__radio-button'>
                                         No
-                                        <Field type='radio' className={`new__radio ${errors.password && touched.password ? 'new__radio--invalid' : ''}`} name='coach' value='no'/>
+                                        <Field type='radio' className={`new__radio ${errors.coach && touched.coach ? 'new__radio--invalid' : ''}`} name='coach' value='no'/>
                                     </label>
                                     <p className='new__radio-text'>*Selecting yes will allow other user to see your coach card under the "Find Coach" page. This will display your: Username, MMR, and Discord for users to contact you.</p>
                                 </div>
-                                {errors.password && touched.password ? (
+                                {errors.coach && touched.coach ? (
                                 <div className='new__errors'>{errors.password}</div>
                                 ) : null}
                             </div>

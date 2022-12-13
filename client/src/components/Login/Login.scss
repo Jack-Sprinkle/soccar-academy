@@ -6,9 +6,6 @@
 .login {
     z-index: 1;
     width: 15rem;
-    background-color: colors.$off-white;
-    border-radius: .25rem;
-    border: 1px solid colors.$dark-blue;
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -21,7 +18,7 @@
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4.5px );
     -webkit-backdrop-filter: blur( 4.5px );
-    border-radius: 10px;
+    border-radius: .25rem;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 
     @include responsive.tablet {
@@ -103,7 +100,7 @@
 
     &__close {
         border: none;
-        background-color: colors.$off-white;
+        background-color: rgba( 255, 255, 255, 0.18 );
         background-image: url('../../assets/icons/close.svg');
         background-repeat: no-repeat;
         background-position: center;
