@@ -4,7 +4,7 @@ $orange: #FC660B;
 $orange-hover: #F55D00;
 $white: #FFFFFF;
 $dark-blue: #062D98;
-$light-blue: #76C5FF;
+$light-blue: #76c5ff;
 $black: #000000;
 $error: #C94515;
 
@@ -14,5 +14,11 @@ $error: #C94515;
 }
 
 @mixin boxshadow {
-    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+    box-shadow:
+    3.4px 3.4px 2.3px rgba(0, 0, 0, -0.066),
+    8.7px 8.7px 5.9px rgba(0, 0, 0, -0.014),
+    17.7px 17.7px 12.1px #0000000b,
+    36.5px 36.5px 24.8px #0000001a,
+    100px 100px 68px #00000029
+  ;
 }
