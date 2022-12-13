@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 
+/soccar-academy-db
 # testing
 /coverage
 

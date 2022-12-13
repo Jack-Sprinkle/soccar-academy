@@ -10,7 +10,10 @@
     "migrate:up": "knex migrate:up",
     "migrate:down": "knex migrate:down",
     "migrate:rollback": "knex migrate:rollback",
-    "seed": "knex seed:run"
+    "seed:users": "knex seed:run --specific=users.js",
+    "seed:mmr": "knex seed:run --specific=mmr.js",
+    "seed:posts": "knex seed:run --specific=posts.js",
+    "seed:comments": "knex seed:run --specific=comments.js"
   },
   "author": "Jack Sprinkle",
   "license": "ISC",
