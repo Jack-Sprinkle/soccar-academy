@@ -3,6 +3,32 @@
 @use '../../styles/responsive';
 
 
+ @-webkit-keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+
 .login {
     z-index: 1;
     width: 15rem;
@@ -20,6 +46,8 @@
     -webkit-backdrop-filter: blur( 4.5px );
     border-radius: .25rem;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    -webkit-animation: slide-in-right 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-right 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
     @include responsive.tablet {
         top: .7rem;
