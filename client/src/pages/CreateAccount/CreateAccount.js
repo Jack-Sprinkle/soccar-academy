@@ -122,7 +122,7 @@ function CreateAccount({isLoggedIn}) {
 
                                 <label className='new__label'>  
                                     Bio
-                                    <Field as='textarea' className={`new__input--large ${errors.bio && touched.bio ? 'new__input--invalid' : ''}`} placeholder='Best coaching ' name='bio'/>
+                                    <Field as='textarea' className={`new__input--large ${errors.bio && touched.bio ? 'new__input--invalid' : ''}`} placeholder='What do you want other users to know... ' name='bio'/>
                                 </label>
                                 {errors.bio && touched.bio ? (
                                 <div className='new__errors'>{errors.bio}</div>
