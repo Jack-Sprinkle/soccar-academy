@@ -13,7 +13,8 @@ const newAccountSchema = Yup.object().shape({
     discordId: Yup.string().min(2, 'Too short').max(50, 'Too long').required('This field is required'),
     standardMMR: Yup.number('Must be a number').required('This field is required'),
     bio: Yup.string(),
-    password: Yup.string().min(5, 'Too short').required('This field is required'),
+    password: Yup.string().min(5, 'Too short').matches().required('This field is required'),
+    confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match').required('This field is required'),
     coach: Yup.string().required()
 });
 
@@ -66,6 +67,7 @@ function CreateAccount({isLoggedIn}) {
                         standardMMR: '',
                         bio: '',
                         password: '',
+                        confirmPassword: '',
                         coach: ''
                     }}
 
@@ -132,6 +134,14 @@ function CreateAccount({isLoggedIn}) {
                                 </label>
                                 {errors.password && touched.password ? (
                                 <div className='new__errors'>{errors.password}</div>
+                                ) : null}
+
+                                <label className='new__label'>  
+                                    Confirm Password
+                                    <Field type='password' className={`new__input ${errors.confirmPassword && touched.confirmPassword ? 'new__input--invalid' : ''}`} name='confirmPassword'/>
+                                </label>
+                                {errors.confirmPassword && touched.confirmPassword ? (
+                                <div className='new__errors'>{errors.confirmPassword}</div>
                                 ) : null}
 
                                 <div className='new__radio'>  
