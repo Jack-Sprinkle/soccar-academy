@@ -15,12 +15,11 @@ Server setup instructions
 3. Create a MySQL database either through MySQL workbench or a editor extention you use.
 4. Set up your .env file using the sample as a guide. Entering your specific PORT, HOST, DB Name, etc...
 5. In the terminal, run the command "npm run migrate". This will migrate all tables necessary.
-6. After migrating the tables, we will seed the tables one at a time. In the terminal, run the following commands in order:
+6. Due to the foreign key constraints on MMR, Posts and Comments; each table must be seeded in this order. Run the following commands in order:
     a. npx knex seed:run --specific=users.js
     b. npx knex seed:run --specific=mmr.js
     c. npx knex seed:run --specific=posts.js
     d. npx knex seed:run --specific=comments.js
-    Because of the foreign key constraints on MMR, Posts and Comments. Each table must be seeded in this order.
 7. Run the command node server.js in your server terminal to start the local server.
 8. Move on to setting up the client!
 
