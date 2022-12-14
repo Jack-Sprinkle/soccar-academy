@@ -133,6 +133,25 @@
             border: 1px solid colors.$orange-hover;
         }
     }
+
+    &__error {
+        background-image: url('../../assets/icons/error-24px.svg');
+        width: 9rem;
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: left;
+        background-size: .75rem;
+        padding-left: 1rem;
+        font-size: .75rem;
+        color: colors.$error;
+        margin: 0 auto;
+
+        @include responsive.tablet {
+            font-size: .875rem;
+            line-height: 1.125rem;
+            background-size: 1rem;
+        }
+    }
 }
 
 .complete {
