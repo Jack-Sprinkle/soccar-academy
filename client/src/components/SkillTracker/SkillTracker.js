@@ -15,7 +15,7 @@ function SkillTracker() {
             list = (JSON.parse(localStorage.getItem('tasks')));
             setTodoList(list)
 
-            if(list.length > 1) {
+            if(list.length >= 1) {
                 let counter = 0
                 for(let i = 0; i < list.length; i++) {
                     if(list[i].complete) {
