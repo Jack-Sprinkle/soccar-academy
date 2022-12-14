@@ -1,10 +1,10 @@
 import './SupportPage.scss';
 import TabletMenu from '../../components/TabletMenu/TabletMenu';
 
-function SupportPage() {
+function SupportPage({isLoggedIn}) {
     return (
         <main className='support'>
-            <TabletMenu />
+            <TabletMenu isLoggedIn={isLoggedIn} />
             <div className='support--tablet'>
                 <h2 className='support__heading'>Support</h2>
                 <div className='support__info'>

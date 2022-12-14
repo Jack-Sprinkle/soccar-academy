@@ -1,13 +1,13 @@
 import './TabletMenu.scss';
 import { Link } from 'react-router-dom';
 
-function TabletMenu() {
+function TabletMenu({isLoggedIn}) {
     return (
         <div className='tablet'>
             <h2 className='tablet__heading'>Menu</h2>
             <ul className='tablet__list'>
                 <Link to='/'><li className='tablet__list-item'>Home</li></Link>
-                <Link to='/create-account'><li className='tablet__list-item'>Create Account</li></Link>
+                {isLoggedIn ? null : (<Link to='/create-account'><li className='tablet__list-item'>Create Account</li></Link>)}
                 <Link to='/dashboard'><li className='tablet__list-item'>Dashboard</li></Link>
                 <Link to='/coaches'><li className='tablet__list-item'>Find Coach</li></Link>
                 <Link to='/'><li className='tablet__list-item'>Forums</li></Link>

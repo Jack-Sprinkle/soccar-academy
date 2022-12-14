@@ -1,7 +1,7 @@
 import './Menu.scss';
 import {Link, useNavigate} from 'react-router-dom';
 
-function Menu({setLoginShow, show, onClose, setIsLoggedIn, setUser}) {
+function Menu({setLoginShow, show, onClose, setIsLoggedIn, setUser, isLoggedIn}) {
     const navigate = useNavigate()
     const handleLogout = () => {
         sessionStorage.removeItem('token');
@@ -29,14 +29,14 @@ function Menu({setLoginShow, show, onClose, setIsLoggedIn, setUser}) {
             </div>
             <ul className='menu__list'>
                 <Link to='/' onClick={onClose}><li className='menu__list-item'>Home</li></Link>
-                <Link to='/create-account' onClick={onClose}><li className='menu__list-item'>Create Account</li></Link>
-                <li onClick={openLogin} className='menu__list-item'>Log in</li>
+                {isLoggedIn ? null : (<Link to='/create-account' onClick={onClose}><li className='menu__list-item'>Create Account</li></Link>)}
+                {isLoggedIn ? null : (<li onClick={openLogin} className='menu__list-item'>Log in</li>)}
                 <Link to='/dashboard' onClick={onClose}><li className='menu__list-item'>Dashboard</li></Link>
                 <Link to='/coaches' onClick={onClose}><li className='menu__list-item'>Find Coach</li></Link>
                 <Link to='/' onClick={onClose}><li className='menu__list-item'>Forums</li></Link>
                 <Link to='/about' onClick={onClose}><li className='menu__list-item'>About</li></Link>
                 <Link to='/support' onClick={onClose}><li className='menu__list-item'>Support</li></Link>
-                <li onClick={handleLogout} className='menu__list-item'>Log Out</li>
+                {isLoggedIn ? (<li onClick={handleLogout} className='menu__list-item'>Log Out</li>) : null}
             </ul>          
         </div>
     );

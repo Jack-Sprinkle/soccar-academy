@@ -6,7 +6,7 @@ import Post from '../../components/Post/Post';
 import TabletMenu from '../../components/TabletMenu/TabletMenu';
 
 
-function PostsPage() {
+function PostsPage({isLoggedIn}) {
     //Initialize thread list as state
     const [threads, setThreads] = useState([])
 
@@ -28,7 +28,7 @@ function PostsPage() {
     if(!threads) {
         return (
             <div className='loading'>
-            <TabletMenu />
+            <TabletMenu isLoggedIn={isLoggedIn} />
             <p className='loading__text'>Loading posts...</p>
         </div>
         )
@@ -51,7 +51,7 @@ function PostsPage() {
 
     return (
         <div className='post__container'>
-            <TabletMenu />
+            <TabletMenu isLoggedIn={isLoggedIn} />
             <div className='post__container--tablet'>
                 <h2 className='post__category'>{category} Discussion</h2>
                 <Link to={`/${category}/newpost`}><button className='post__new-button'>New Post</button></Link>

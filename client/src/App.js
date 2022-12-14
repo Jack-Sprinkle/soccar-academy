@@ -70,13 +70,13 @@ function App() {
       <BrowserRouter>
         <Header handleLogin={handleLogin} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setUser={setUser} user={user} errorMessage={errorMessage}/>
         <Routes>
-          <Route path='/' element={<HomePage />}></Route>
+          <Route path='/' element={<HomePage isLoggedIn={isLoggedIn} />}></Route>
           <Route path='/create-account' element={<CreateAccount isLoggedIn={isLoggedIn} />}></Route>
-          <Route path='/about' element={<AboutPage />}></Route>
-          <Route path='/support' element={<SupportPage />}></Route>
-          <Route path='/:category' element={<PostsPage />}></Route>
+          <Route path='/about' element={<AboutPage isLoggedIn={isLoggedIn} />}></Route>
+          <Route path='/support' element={<SupportPage isLoggedIn={isLoggedIn} />}></Route>
+          <Route path='/:category' element={<PostsPage isLoggedIn={isLoggedIn} />}></Route>
           <Route path='/:category/newpost' element={<CreatePost user={user} isLoggedIn={isLoggedIn} />}></Route>
-          <Route path='/:category/:postId/comments' element={<ThreadPage user={user} />}></Route>
+          <Route path='/:category/:postId/comments' element={<ThreadPage user={user} isLoggedIn={isLoggedIn} />}></Route>
           <Route path='/dashboard' element={<Dashboard user={user} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} />}></Route>
           <Route path='/coaches' element={<FindCoachPage user={user} isLoggedIn={isLoggedIn} />}></Route>
         </Routes>

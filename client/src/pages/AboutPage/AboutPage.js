@@ -1,10 +1,10 @@
 import './AboutPage.scss'
 import TabletMenu from '../../components/TabletMenu/TabletMenu'
 
-function AboutPage() {
+function AboutPage({isLoggedIn}) {
     return (
         <main className='about'>
-            <TabletMenu />
+            <TabletMenu isLoggedIn={isLoggedIn} />
             <div className='about--tablet'>
                 <h2 className='about__heading'>About</h2>
                 <div className='about__info'>

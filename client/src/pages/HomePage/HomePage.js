@@ -2,10 +2,10 @@ import './HomePage.scss';
 import ForumList from '../../components/ForumList/FourmList';
 import TabletMenu from '../../components/TabletMenu/TabletMenu';
 
-function HomePage() {
+function HomePage({isLoggedIn}) {
     return (
         <div className='homepage'>
-            <TabletMenu />
+            <TabletMenu isLoggedIn={isLoggedIn} />
             <ForumList />
         </div>
     );

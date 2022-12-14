@@ -9,7 +9,7 @@ function Dashboard({user, isLoggedIn, setIsLoggedIn, setUser}) {
     if(!isLoggedIn) {
         return (
             <div className='failed__auth'>
-                <TabletMenu />
+                <TabletMenu isLoggedIn={isLoggedIn} />
                 <p className='failed__auth-text'>You must be logged in to see this page.</p>
             </div>
         )
@@ -18,7 +18,7 @@ function Dashboard({user, isLoggedIn, setIsLoggedIn, setUser}) {
     if(!user) {
         return (
             <div className='loading'>
-                <TabletMenu />
+                <TabletMenu isLoggedIn={isLoggedIn} />
                 <p className='loading__text'>Currently retrieving your dashboard...</p>
             </div>
         )
@@ -27,7 +27,7 @@ function Dashboard({user, isLoggedIn, setIsLoggedIn, setUser}) {
     const {id, user_name, discord_name, epic_id, mmr_standard, user_bio, created_on} = user
     return (
         <div className='dashboard--tablet'>
-            <TabletMenu />
+            <TabletMenu isLoggedIn={isLoggedIn} />
             <div className='dashboard'>
                 <UserProfile
                     setIsLoggedIn={setIsLoggedIn}

@@ -11,7 +11,7 @@ const commentSchema = Yup.object().shape({
     comment: Yup.string().min(2, 'Too short!').required('This field is required')
 })
 
-function ThreadPage({user}) {
+function ThreadPage({user, isLoggedIn}) {
     //Grab category and post id from params
     const {category, postId} = useParams();
     const navigate = useNavigate()
@@ -102,7 +102,7 @@ function ThreadPage({user}) {
 
     return (
         <div className='thread'>
-            <TabletMenu />
+            <TabletMenu isLoggedIn={isLoggedIn} />
             <div className='thread__container--tablet'>
                 <div className='thread__info'>
                     <div className='thread__info-container'>

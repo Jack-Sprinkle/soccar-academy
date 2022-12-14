@@ -19,7 +19,7 @@ function CreatePost({user, isLoggedIn}) {
     if(!isLoggedIn) {
         return (
             <div className='failed__auth'>
-                <TabletMenu />
+                <TabletMenu isLoggedIn={isLoggedIn} />
                 <p className='failed__auth-text'>You must be logged in to create a new post</p>
             </div>
         )
@@ -28,7 +28,7 @@ function CreatePost({user, isLoggedIn}) {
     if(!user) {
         return (
             <div className='loading'>
-                <TabletMenu />
+                <TabletMenu isLoggedIn={isLoggedIn} />
                 <p className='loading__text'>Loading...</p>
             </div>
         )
@@ -56,7 +56,7 @@ function CreatePost({user, isLoggedIn}) {
 
     return (
         <div className='new-post'>
-            <TabletMenu />
+            <TabletMenu isLoggedIn={isLoggedIn} />
             <div className='new-post--tablet'>
                 <h2 className='new-post__heading'>Create new post</h2>
                 <Formik

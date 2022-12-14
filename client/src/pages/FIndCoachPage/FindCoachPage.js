@@ -37,7 +37,7 @@ function FindCoachPage({user, isLoggedIn}) {
     if(!isLoggedIn) {
         return (
             <div className='failed__auth'>
-                <TabletMenu />
+                <TabletMenu isLoggedIn={isLoggedIn} />
                 <p className='failed__auth-text'>You must be logged in to see this page.</p>
             </div>
         )
@@ -46,7 +46,7 @@ function FindCoachPage({user, isLoggedIn}) {
     if(!user) {
         return (
             <div className='failed__auth'>
-                <TabletMenu />
+                <TabletMenu isLoggedIn={isLoggedIn} />
                 <p className='failed__auth-text'>Loading...</p>
             </div>
         )
@@ -56,7 +56,7 @@ function FindCoachPage({user, isLoggedIn}) {
     if(!coaches) {
         return (
             <div className='loading'>
-                <TabletMenu />
+                <TabletMenu isLoggedIn={isLoggedIn} />
                 <p className='loading__text'>There are no coaches at this time</p>
             </div>
         )
@@ -72,7 +72,7 @@ function FindCoachPage({user, isLoggedIn}) {
 
     return (
         <div className='coach__list--tablet'>
-            <TabletMenu/>
+            <TabletMenu isLoggedIn={isLoggedIn}/>
             <div className='coach__list'>
                 <h2 className='coach__list-heading'>Find a Coach</h2>
                 <p className='coach__list-info'>Find a coach you like and message them through Discord to get started!</p>

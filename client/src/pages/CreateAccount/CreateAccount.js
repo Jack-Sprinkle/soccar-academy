@@ -47,7 +47,7 @@ function CreateAccount({isLoggedIn}) {
     if(isLoggedIn) {
         return (
             <div className='logged-in'>
-                <TabletMenu />
+                <TabletMenu isLoggedIn={isLoggedIn} />
                 <p className='logged-in__text'>Already logged in</p>
             </div>
         )
@@ -55,7 +55,7 @@ function CreateAccount({isLoggedIn}) {
 
     return (
         <div className='new-account--tablet'>
-            <TabletMenu />
+            <TabletMenu isLoggedIn={isLoggedIn} />
             <div className='new'>
                 <h2 className='new__heading'>Create Account</h2>
                 <Formik 
