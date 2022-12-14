@@ -30,6 +30,7 @@ function Login({loginShow, onClose, handleLogin, errorMessage, isLoggedIn}) {
                 onSubmit={(values, {resetForm}) => {
                     handleLogin(values)
                     resetForm()
+                    onClose()
                 }}
             >
                 {({errors, touched}) => (
